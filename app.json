@@ -1,7 +1,7 @@
 {
 	"name": "BT-CODERMERT",
-	 "description": "WhatsApp Bot Multi Devic",
-	 "repository":  "https://github.com/codermert/Base-4.2.0",
+	 "description": "WhatsApp Bot Multi Device",
+	 "repository":  "https://github.com/codermert/Mertbot",
 	 "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
 "buildpacks": [
     {
