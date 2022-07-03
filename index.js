@@ -30,6 +30,10 @@ module.exports = async(conn, mek, store) => {
 			const senderNumber = sender.split('@')[0]
 			const botNumber = conn.user.id.split(':')[0]
 			const pushname = mek.pushName || 'Müşteri'
+
+			var items = ['Gizem', 'Derya','Seher', 'Mert', 'Tuana'];
+
+			const betaname = items[Math.floor(Math.random() * items.length)];
 			
 			const isMe = botNumber.includes(senderNumber)
 			const isOwner = ownerNumber.includes(senderNumber) || isMe
@@ -43,19 +47,17 @@ module.exports = async(conn, mek, store) => {
 			if (mek.message.listResponseMessage){
 				list = mek.message.listResponseMessage.singleSelectReply.selectedRowId
 				if (list.includes(`a`)){
-				reply('482315')}
+				reply('0001')}
 
 				if (list.includes(`b`)){
-				reply('475574')}
+				reply('0002')}
 
 				if (list.includes(`c`)){
-				reply('482310')}
+				reply('0003')}
 
 				if (list.includes(`d`)){
-				reply('479671')}
+				reply('0004')}
 
-				if (list.includes(`e`)){
-				reply('475887')}
 
 			}
 
@@ -64,17 +66,17 @@ module.exports = async(conn, mek, store) => {
 
 case 'merhaba':
 	
-	reply(`İyi günler *${pushname}* 😊`)
+	reply(`İyi günler *${pushname}*, ben ${betaname} 🤗`)
 
 	let buttonsx= [
-		{buttonId: prefix + 'menu', buttonText: {displayText: '👠  AYAKKABI MENÜ'}, type: 1},
-		{buttonId: prefix + 'konum', buttonText: {displayText: '📍 MAĞAZA KONUM'}, type: 1},
-		{buttonId: prefix + 'bedentablosu', buttonText: {displayText: '📐 BEDEN TABLOSU'}, type: 1},
+		{buttonId: prefix + 'menu', buttonText: {displayText: '🦾  YAZILIM MENÜ'}, type: 1},
+		{buttonId: prefix + 'konum', buttonText: {displayText: '📍 KONUM'}, type: 1},
+		{buttonId: prefix + 'hizmetler', buttonText: {displayText: '👩‍💻 HİZMETLER'}, type: 1},
 	  ]
 	let buttonMessagessssss = {
-		image: {url: 'https://www.sirnakisplatformu.com/upload/2021/04/alfa_400_400.jpg'},
-		caption: "Alfa Ayakkabı'ya hoş geldiniz. Size daha hızlı yardımcı olabilmem için istediğiniz ayakkabı modeline ihtiyacım var. Mağazamızda bulunan tüm ayakkabıları listeliyorum.",
-		footer: 'Alfa Ayakkabı',
+		image: {url: 'https://i.hizliresim.com/9ss6jx1.png'},
+		caption: "UPO MARKT'a hoş geldiniz. Size daha hızlı yardımcı olabilmem için istediğiniz yazılım modeline ihtiyacım var. Tüm hizmetleri listeliyorum...",
+		footer: 'UPO MARKT | 0414 606 04 45',
 		buttons: buttonsx,
 		headerType: 4
 	}
@@ -97,7 +99,7 @@ break
 case "konum": {
 	let sentMsg  = await conn.sendMessage(
 		from, 
-		{ location: { degreesLatitude: 37.92845239236922,   degreesLongitude: 40.17069727853868 } }
+		{ location: { degreesLatitude: 41.0322806231775,   degreesLongitude: 29.028546991391305 } }
 	)
 	
 }
@@ -111,15 +113,15 @@ case 'siparis':
 
 
 
-case "bedentablosu":{
+case "hizmetler":{
 	let buttons= [
-		{buttonId: prefix + 'menu', buttonText: {displayText: 'AYAKKABI MENÜ'}, type: 1},
+		{buttonId: prefix + 'menu', buttonText: {displayText: 'YAZILIM MENÜ'}, type: 1},
 		{buttonId: prefix + 'konum', buttonText: {displayText: 'MAĞAZA KONUM'}, type: 1},
 	  ]
 	let buttonMessages = {
-		image: {url: 'https://louiscardy.com.tr/i/u/beden-tablosu.jpg'},
+		image: {url: 'https://miro.medium.com/max/1838/1*fkyEgZnbf3jJP3-G7xykLg.jpeg'},
 		caption: "*BEDEN TABLOSU*",
-		footer: 'Alfa Ayakkabı',
+		footer: 'UPO MARKT | 0414 606 04 45',
 		buttons: buttons,
 		headerType: 4
 	}
@@ -129,7 +131,7 @@ break
 
 
 
-case "482315":
+case "0001":
 	let reactionMessage = {
 		react: {
 			text: "🔍",
@@ -138,17 +140,17 @@ case "482315":
 	}
 
 	let templateButtons = [
-		{index: 1, urlButton: {displayText: 'Web Sitemiz', url: 'https://www.smmalpha.com/'}},
-		{index: 2, callButton: {displayText: 'Hemen Ara', phoneNumber: '+90 414 606 04 45'}},
+		{index: 1, urlButton: {displayText: 'Web Sitemiz', url: 'https://codermert.github.io/'}},
+		{index: 2, callButton: {displayText: 'Hemen Ara', phoneNumber: '+90 541 361 65 48'}},
 		{index: 3, quickReplyButton: {displayText: 'SATIN AL', id: prefix + 'siparis'}},
 
 		
 	  ]
 
 	let buttonMessage = {
-		image: {url: 'https://img.tozlu.com/Uploads/UrunResimleri/buyuk/siyahbeyaz-kadin-cirtli-sneaker-spor-a--495f-.jpg'},
-		caption: "*SiyahBeyaz Kadın Cırtlı Sneaker Spor Ayakkabı 482315*\n\n🏷️ ₺79,99\n👠 Spor Ayakkabı Siyah-Beyaz\n\n\n30 dakika içerisinde sipariş ver, ürünün kargoda\n\n🫣 Beden tablosu için *bedentablosu* yazınız",
-		footer: 'Alfa Ayakkabı',
+		image: {url: 'https://aday.ius.edu.ba/sites/default/files/artificial-intelligence-2167835_1920.jpg'},
+		caption: "*Android Mobil Uygulama*\n\n🏷️ ₺1000'den başlayan fiyatlarla\n 🧑‍💻 Android OS\n\n\n30 dakika içerisinde sipariş ver, %30 indirim yakala",
+		footer: 'UPO MARKT | 0414 606 04 45',
 		templateButtons: templateButtons,
 		headerType: 4
 		
@@ -157,7 +159,7 @@ case "482315":
 	await conn.sendMessage(from, buttonMessage)
 	 break
 
-case "475574":
+case "0002":
 	let reactionMessage2 = {
 		react: {
 			text: "🔍",
@@ -166,15 +168,17 @@ case "475574":
 	}
 
 	let templateButtons2 = [
-		{index: 1, urlButton: {displayText: 'Web Sitemiz', url: 'https://www.smmalpha.com/'}},
-		{index: 2, callButton: {displayText: 'Hemen Ara', phoneNumber: '+90 414 606 04 45'}},
+		{index: 1, urlButton: {displayText: 'Web Sitemiz', url: 'https://codermert.github.io/'}},
+		{index: 2, callButton: {displayText: 'Hemen Ara', phoneNumber: '+90 541 361 65 48'}},
+		{index: 3, quickReplyButton: {displayText: 'SATIN AL', id: prefix + 'siparis'}},
+
 		
 	  ]
 
 	let buttonMessage2 = {
-		image: {url: 'https://img.tozlu.com/Uploads/UrunResimleri/buyuk/siyah-kadin-yuksek-taban-gunluk-spor-a--a0a2-.jpg'},
-		caption: "*Siyah Kadın Yüksek Taban Günlük Spor Ayakkabı 475574*\n\n🏷️ ₺139,99\n👠 Spor Ayakkabı Siyah\n\n\n30 dakika içerisinde sipariş ver, ürünün kargoda\n\n🫣 Beden tablosu için *bedentablosu* yazınız",
-		footer: 'Alfa Ayakkabı',
+		image: {url: 'https://socialmedia.com.tr/wp-content/uploads/2022/06/social-audio.png'},
+		caption: "*Sosyal Medya Tasarım*\n\n🏷️ ₺100'den başlayan fiyatlarla\n 🧑‍💻 EPS - PSD\n\n\n30 dakika içerisinde sipariş ver, %30 indirim yakala",
+		footer: 'UPO MARKT | 0414 606 04 45',
 		templateButtons: templateButtons2,
 		headerType: 4
 		
@@ -185,7 +189,7 @@ case "475574":
 	 break
 
 	 
- case "482310":
+ case "0003":
 		let reactionMessage3 = {
 			react: {
 				text: "🔍",
@@ -194,15 +198,17 @@ case "475574":
 		}
 	
 		let templateButtons3 = [
-			{index: 1, urlButton: {displayText: 'Web Sitemiz', url: 'https://www.smmalpha.com/'}},
-			{index: 2, callButton: {displayText: 'Hemen Ara', phoneNumber: '+90 414 606 04 45'}},
+			{index: 1, urlButton: {displayText: 'Web Sitemiz', url: 'https://codermert.github.io/'}},
+			{index: 2, callButton: {displayText: 'Hemen Ara', phoneNumber: '+90 541 361 65 48'}},
+			{index: 3, quickReplyButton: {displayText: 'SATIN AL', id: prefix + 'siparis'}},
+
 			
 		  ]
 	
 		let buttonMessage3 = {
-			image: {url: 'https://img.tozlu.com/Uploads/UrunResimleri/buyuk/siyah-kadin-bagcikli-sneaker-spor-ayak-2b4c57.jpg'},
-			caption: "*Siyah Kadın Bağcıklı Sneaker Spor Ayakkabı 482310*\n\n🏷️ ₺89,99 \n👠 Spor Ayakkabı Siyah\n\n\n30 dakika içerisinde sipariş ver, ürünün kargoda\n\n🫣 Beden tablosu için *bedentablosu* yazınız",
-			footer: 'Alfa Ayakkabı',
+			image: {url: 'https://www.cybermagonline.com/img/sayfa/phone-with-instagram-popping-up-icons-274845-85.jpg'},
+			caption: "*Instagram Account*\n\n🏷️ ₺1'den başlayan fiyatlarla\n 🧑‍💻 Telefon Doğrulaması \nHesap oluşturucumuz, popüler SMS siteleriyle hesaplarınızı otomatik olarak Telefonla Doğrulayabilir.\n\n 🧑‍💻 Oluşturduğumuz IG hesaplarına Türk isim - biyografi, resim hatta özel avatar yüklüyoruz!\n\n\n30 dakika içerisinde sipariş ver, %30 indirim yakala",
+			footer: 'UPO MARKT | 0414 606 04 45',
 			templateButtons: templateButtons3,
 			headerType: 4
 			
@@ -213,7 +219,7 @@ case "475574":
 		 break
 
 
- case "479671":
+ case "0004":
 		let reactionMessage4 = {
 			react: {
 				text: "🔍",
@@ -222,15 +228,17 @@ case "475574":
 		}
 	
 		let templateButtons4 = [
-			{index: 1, urlButton: {displayText: 'Web Sitemiz', url: 'https://www.smmalpha.com/'}},
-			{index: 2, callButton: {displayText: 'Hemen Ara', phoneNumber: '+90 414 606 04 45'}},
+			{index: 1, urlButton: {displayText: 'Web Sitemiz', url: 'https://codermert.github.io/'}},
+			{index: 2, callButton: {displayText: 'Hemen Ara', phoneNumber: '+90 541 361 65 48'}},
+			{index: 3, quickReplyButton: {displayText: 'SATIN AL', id: prefix + 'siparis'}},
+
 			
 		  ]
 	
 		let buttonMessage4 = {
-			image: {url: 'https://img.tozlu.com/Uploads/UrunResimleri/buyuk/kotmavisi-kadin-duz-taban-gunluk-ayakk-e103-4.jpg'},
-			caption: "*KOTMAVİSİ Kadın Düz Taban Günlük Ayakkabı 479671*\n\n🏷️ ₺139,99 \n👠 Günlük Ayakkabı KOTMAVİSİ\n\n\n30 dakika içerisinde sipariş ver, ürünün kargoda\n\n🫣 Beden tablosu için *bedentablosu* yazınız",
-			footer: 'Alfa Ayakkabı',
+			image: {url: 'https://cdn.wmaraci.com/blog/smm-panel.png'},
+			caption: "*Sosyal Medya Hizmeti*\n\n🏷️ ₺200'den başlayan fiyatlarla\n 🧑‍💻 Tüm Sosyal Medya Ağlarını Tek Panelden Rahatça Yönetin\n\n\n30 dakika içerisinde sipariş ver, %30 indirim yakala",
+			footer: 'UPO MARKT | 0414 606 04 45',
 			templateButtons: templateButtons4,
 			headerType: 4
 			
@@ -241,52 +249,27 @@ case "475574":
 		 break
 
 
-case "475887":
-			let reactionMessage5 = {
-				react: {
-					text: "🔍",
-					key: mek.key
-				}
-			}
-		
-			let templateButtons5 = [
-				{index: 1, urlButton: {displayText: 'Web Sitemiz', url: 'https://www.smmalpha.com/'}},
-				{index: 2, callButton: {displayText: 'Hemen Ara', phoneNumber: '+90 414 606 04 45'}},
-				
-			  ]
-		
-			let buttonMessage5 = {
-				image: {url: 'https://img.tozlu.com/Uploads/UrunResimleri/buyuk/bej-kadin-sivri-burun-kalin-topuklu-ay-b847-3.jpg'},
-				caption: "*Bej Kadın Sivri Burun Kalın Topuklu Ayakkabı 475887*\n\n🏷️ ₺169,99 \n👠 Topuklu Ayakkabı Bej\n\n\n30 dakika içerisinde sipariş ver, ürünün kargoda\n\n🫣 Beden tablosu için *bedentablosu* yazınız",
-				footer: 'Alfa Ayakkabı',
-				templateButtons: templateButtons5,
-				headerType: 4
-				
-			}
-			await conn.sendMessage(from, reactionMessage5)
-			await conn.sendMessage(from, buttonMessage5)
-			
-			 break
+
+
 
 case "menu":
 let sections = [
     {
 	rows: [
-	    {title: "SiyahBeyaz Kadın Cırtlı Sneaker Spor Ayakkabı", rowId: `${prefix}a`, description: "482315"},
-	    {title: "Siyah Kadın Yüksek Taban Günlük Spor Ayakkabı", rowId: `${prefix}b`, description: "475574"},
-		{title: "Siyah Kadın Bağcıklı Sneaker Spor Ayakkabı", rowId: `${prefix}c`, description: "482310"},
-	    {title: "KOTMAVİSİ Kadın Düz Taban Günlük Ayakkabı", rowId: `${prefix}d`, description: "479671"},
-		{title: "Bej Kadın Sivri Burun Kalın Topuklu Ayakkabı", rowId: `${prefix}e`, description: "475887"},
-		{title: "Siyah Kadın Bağcıklı Anaroklu Yüksek Taban Günlük Spor Ayakkabı", rowId: `${prefix}f`, description: "479589"}
+	    {title: "Android Mobil Uygulama", rowId: `${prefix}a`, description: "0001"},
+	    {title: "Sosyal Medya Tasarım", rowId: `${prefix}b`, description: "0002"},
+		{title: "Instagram Account", rowId: `${prefix}c`, description: "0003"},
+	    {title: "Sosyal Medya Hizmeti", rowId: `${prefix}d`, description: "0004"},
+		
 	]
     },
    
 ]
 let listMessage = {
-  text: "💸 Kapıda Ödeme\n🚛 1-3 iş gününde teslimat\n📦 Şeffaf Kargo",
+  text: "💸 Online ödeme\n🚛 1-14 iş gününde teslimat\n📦 Temiz kodlama",
   footer: "",
-  title: "👠 ALFA AYAKKABI 👠",
-  buttonText: "🛒 Ayakkabı Listesi 🛒",
+  title: " 🧑‍💻 UPO MARKT | Yazılım  🧑‍💻",
+  buttonText: "🛒 Yazılım Listesi 🛒",
   sections
 }
 
