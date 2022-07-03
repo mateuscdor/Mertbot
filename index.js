@@ -96,6 +96,39 @@ await conn.sendMessage(from, buttonMessagessssss)
 
 break
 
+
+case 'selam':
+	
+	reply(`İyi günler *${pushname}*, ben ${betaname} 🤗`)
+
+	let buttonsxx= [
+		{buttonId: prefix + 'menu', buttonText: {displayText: '🦾  YAZILIM MENÜ'}, type: 1},
+		{buttonId: prefix + 'konum', buttonText: {displayText: '📍 KONUM'}, type: 1},
+		{buttonId: prefix + 'hizmetler', buttonText: {displayText: '👩‍💻 HİZMETLER'}, type: 1},
+	  ]
+	let buttonMessagesss = {
+		image: {url: 'https://i.hizliresim.com/9ss6jx1.png'},
+		caption: "UPO MARKT'a hoş geldiniz. Size daha hızlı yardımcı olabilmem için istediğiniz yazılım modeline ihtiyacım var. Tüm hizmetleri listeliyorum...",
+		footer: 'UPO MARKT | 0414 606 04 45',
+		buttons: buttonsxx,
+		headerType: 4
+	}
+
+
+let reactionMessage1x = {
+	react: {
+		text: "💫",
+		key: mek.key
+	}
+}
+
+
+await conn.sendMessage(from, reactionMessage1x)
+await conn.sendMessage(from, buttonMessagesss)
+
+
+break
+
 case "konum": {
 	let sentMsg  = await conn.sendMessage(
 		from, 
