@@ -1,0 +1,20 @@
+{
+	"name": "BT-CODERMERT",
+	 "description": "WhatsApp Bot Multi Devic",
+	 "repository":  "https://github.com/codermert/Base-4.2.0",
+	 "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
+"buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs"
+    },
+{
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    }
+  ],
+  "formation": {
+  	"worker": {
+  		"quantity": 1,
+  		"size":  "free"
+  	}
+  }
+}

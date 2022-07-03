@@ -1,0 +1,29 @@
+{
+  "name": "base-4.2.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InkyGod03/Base-4.2.0.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/InkyGod03/Base-4.2.0/issues"
+  },
+  "homepage": "https://github.com/InkyGod03/Base-4.2.0#readme",
+  "dependencies": {
+    "@adiwajshing/baileys": "^4.2.0",
+    "@adiwajshing/keyed-db": "^0.2.4",
+    "chalk": "^4.1.2",
+    "qrcode-terminal": "^0.12.0"
+  }
+}
