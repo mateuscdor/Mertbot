@@ -138,6 +138,26 @@ case "konum": {
 }
 break
 
+case "gelistirici":
+	let vcard = 'BEGIN:VCARD\n' // metadata of the contact card
+            + 'VERSION:3.0\n' 
+            + 'FN:Coder Mert\n' // full name
+            + 'ORG:UPO MARKT;\n' // the organization of the contact
+            + 'TEL;type=CELL;type=VOICE;waid=905413616548:+90 541 361 65 48\n' // WhatsApp ID + phone number
+            + 'END:VCARD'
+let sentMsg  = await conn.sendMessage(
+    from,
+    { 
+        contacts: { 
+            displayName: 'Coder Mert', 
+            contacts: [{ vcard }] 
+        }
+    }
+)
+
+
+break
+
 
 case 'siparis':
 	reply(`${pushname} isteğiniz üzerine siparişiniz firmamıza bildirilmiştir. Size destek olabilmek çok keyifliydi. Biz hep buradayız, dilediğiniz zaman tekrar yazabilirsiniz. 😊`)
@@ -149,6 +169,7 @@ case 'siparis':
 case "hizmetler":{
 	let buttons= [
 		{buttonId: prefix + 'menu', buttonText: {displayText: 'YAZILIM MENÜ'}, type: 1},
+		{buttonId: prefix + 'gelistirici', buttonText: {displayText: 'GELİŞTİRİCİLER'}, type: 1},
 	  ]
 	let buttonMessages = {
 		image: {url: 'https://miro.medium.com/max/1838/1*fkyEgZnbf3jJP3-G7xykLg.jpeg'},
