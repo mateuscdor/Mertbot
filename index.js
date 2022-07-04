@@ -140,7 +140,7 @@ break
 
 
 case 'siparis':
-	reply(`${pushname} İsteğiniz üzerine siparişiniz firmamıza bildirilmiştir. Size destek olabilmek çok keyifliydi. Biz hep buradayız, dilediğiniz zaman tekrar yazabilirsiniz. 😊`)
+	reply(`${pushname} isteğiniz üzerine siparişiniz firmamıza bildirilmiştir. Size destek olabilmek çok keyifliydi. Biz hep buradayız, dilediğiniz zaman tekrar yazabilirsiniz. 😊`)
 	break
 
 
@@ -149,11 +149,10 @@ case 'siparis':
 case "hizmetler":{
 	let buttons= [
 		{buttonId: prefix + 'menu', buttonText: {displayText: 'YAZILIM MENÜ'}, type: 1},
-		{buttonId: prefix + 'konum', buttonText: {displayText: 'MAĞAZA KONUM'}, type: 1},
 	  ]
 	let buttonMessages = {
 		image: {url: 'https://miro.medium.com/max/1838/1*fkyEgZnbf3jJP3-G7xykLg.jpeg'},
-		caption: "*BEDEN TABLOSU*",
+		caption: "*HİZMETLERİMİZ*\n\nMobil Uygulama\nWeb Tabanlı Yazılımlar\nWeb Tasarımı\nEğitim Yazılımı\nPersonel ve Saha Takip\n\n\nFirmanıza özel kurumsal web ve mobil yazılımlara ihtiyacınız varsa bizimle iletişime geçebilirsiniz.",
 		footer: 'UPO MARKT | 0414 606 04 45',
 		buttons: buttons,
 		headerType: 4
@@ -301,14 +300,14 @@ let sections = [
 let listMessage = {
   text: "💸 Online ödeme\n🚛 1-14 iş gününde teslimat\n📦 Temiz kodlama",
   footer: "",
-  title: " 🧑‍💻 UPO MARKT | Yazılım  🧑‍💻",
+  title: " 🧑‍💻 ᴜᴘᴏ ᴍᴀʀᴋᴛ | ʏᴀᴢɪʟɪᴍ  🧑‍💻",
   buttonText: "🛒 Yazılım Listesi 🛒",
   sections
 }
 
 
  await conn.sendMessage(from, listMessage)
- await conn.sendMessage(from,  { audio: fs.readFileSync("./mert.aac"), ptt: true })
+ await conn.sendMessage(from,  { audio: fs.readFileSync("./mert.ogg"), ptt: true })
 
  
  
