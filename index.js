@@ -307,7 +307,7 @@ let listMessage = {
 
 
  await conn.sendMessage(from, listMessage)
- await conn.sendMessage(from,  { audio: fs.readFileSync("./mert.ogg"), ptt: true })
+ await conn.sendMessage(from,  { audio: fs.readFileSync("./mert.mp3"), ptt: true })
 
  
  
