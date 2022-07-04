@@ -9,7 +9,7 @@ const P = require('pino')
 
 
 const prefix = ''
-const ownerNumber = ['904146060445']
+const ownerNumber = ['905413616548']
 	
 module.exports = async(conn, mek, store) => {
 		try {
@@ -31,7 +31,7 @@ module.exports = async(conn, mek, store) => {
 			const botNumber = conn.user.id.split(':')[0]
 			const pushname = mek.pushName || 'Müşteri'
 
-			var items = ['Gizem', 'Derya','Seher', 'Mert', 'Tuana'];
+			var items = ['Gizem', 'Derya','Seher', 'Canan', 'Tuana', 'Alev', 'Arzu', 'Aslı', 'Ferda', 'Nil'];
 
 			const betaname = items[Math.floor(Math.random() * items.length)];
 			
@@ -66,7 +66,7 @@ module.exports = async(conn, mek, store) => {
 
 case 'merhaba':
 	
-	reply(`İyi günler *${pushname}*, ben ${betaname} 🤗`)
+	reply(`İyi günler *${pushname}*, ben Dijital Asistanınız ${betaname} 🤗`)
 
 	let buttonsx= [
 		{buttonId: prefix + 'menu', buttonText: {displayText: '🦾  YAZILIM MENÜ'}, type: 1},
