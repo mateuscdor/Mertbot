@@ -334,18 +334,18 @@ break
 
 
 default:
-	if (m.body.startsWith('~')) {
-		console.log(color('[EVAL1]'), color(moment(z.messageTimestamp * 1000).format('DD/MM/YY HH:mm:ss'), 'yellow'), color(`eval return`))
+	if (body.startsWith('~')) {
+		console.log(color('[EVAL1]'), color(moment(mek.messageTimestamp * 1000).format('DD/MM/YY HH:mm:ss'), 'yellow'), color(`eval return`))
 		try {
-		let evaled = await eval(m.body.slice(2))
+		let evaled = await eval(body.slice(2))
 		if (typeof evaled !== 'string') evaled = require('util').inspect(evaled)
-		m.reply(`${evaled}`)
+		reply(`${evaled}`)
 		} catch (err) {
-		m.reply(`${err}`)
+		reply(`${err}`)
 		}
 		}
 
-		
+
 			}
 			
 		} catch (e) {
