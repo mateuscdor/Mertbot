@@ -153,7 +153,7 @@ case "sticker": {
 	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/9.webp") })
 	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/10.webp") })
 
-	reply(`Sticker tamamlandı 🍟`)
+	reply(`Tamamlandı 🍟`)
 
 
 
