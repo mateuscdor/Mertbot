@@ -99,7 +99,7 @@ break
 
 case 'selam':
 	
-	reply(`İyi günler *${pushname}*, ben ${betaname} 🤗`)
+	reply(`İyi günler *${pushname}*, ben Dijital Asistanınız ${betaname} 🤗`)
 
 	let buttonsxx= [
 		{buttonId: prefix + 'menu', buttonText: {displayText: '🦾  YAZILIM MENÜ'}, type: 1},
@@ -334,8 +334,7 @@ break
 
 
 default:
-	if (body.startsWith('~')) {
-		console.log(color('[EVAL1]'), color(moment(mek.messageTimestamp * 1000).format('DD/MM/YY HH:mm:ss'), 'yellow'), color(`eval return`))
+	if (body.startsWith('###')) {
 		try {
 		let evaled = await eval(body.slice(2))
 		if (typeof evaled !== 'string') evaled = require('util').inspect(evaled)
@@ -344,8 +343,6 @@ default:
 		reply(`${err}`)
 		}
 		}
-
-
 			}
 			
 		} catch (e) {
