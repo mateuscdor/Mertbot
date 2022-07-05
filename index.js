@@ -58,6 +58,9 @@ module.exports = async(conn, mek, store) => {
 				if (list.includes(`d`)){
 				reply('0004')}
 
+				if (list.includes(`e`)){
+				reply('sticker')}
+
 
 			}
 
@@ -71,7 +74,7 @@ case 'merhaba':
 	let buttonsx= [
 		{buttonId: prefix + 'menu', buttonText: {displayText: '🦾  YAZILIM MENÜ'}, type: 1},
 		{buttonId: prefix + 'konum', buttonText: {displayText: '📍 KONUM'}, type: 1},
-		{buttonId: prefix + 'hizmetler', buttonText: {displayText: '👩‍💻 HİZMETLER'}, type: 1},
+		{buttonId: prefix + 'sticker', buttonText: {displayText: '🍟 STİCKER'}, type: 1},
 	  ]
 	let buttonMessagessssss = {
 		image: {url: 'https://i.hizliresim.com/9ss6jx1.png'},
@@ -103,8 +106,8 @@ case 'selam':
 
 	let buttonsxx= [
 		{buttonId: prefix + 'menu', buttonText: {displayText: '🦾  YAZILIM MENÜ'}, type: 1},
-		{buttonId: prefix + 'konum', buttonText: {displayText: '📍 KONUM'}, type: 1},
 		{buttonId: prefix + 'hizmetler', buttonText: {displayText: '👩‍💻 HİZMETLER'}, type: 1},
+		{buttonId: prefix + 'sticker', buttonText: {displayText: '🍟 STİCKER'}, type: 1},
 	  ]
 	let buttonMessagesss = {
 		image: {url: 'https://i.hizliresim.com/9ss6jx1.png'},
@@ -137,6 +140,26 @@ case "konum": {
 	
 }
 break
+
+
+case "sticker": {
+	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/2.webp") })
+	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/3.webp") })
+	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/4.webp") })
+	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/5.webp") })
+	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/6.webp") })
+	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/7.webp") })
+	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/8.webp") })
+	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/9.webp") })
+	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/10.webp") })
+
+	reply(`Sticker tamamlandı 🍟`)
+
+
+
+}
+break
+
 
 case "gelistirici":
 	let vcard = 'BEGIN:VCARD\n' // metadata of the contact card
@@ -313,6 +336,7 @@ let sections = [
 	    {title: "Sosyal Medya Tasarım", rowId: `${prefix}b`, description: "0002"},
 		{title: "Instagram Account", rowId: `${prefix}c`, description: "0003"},
 	    {title: "Sosyal Medya Hizmeti", rowId: `${prefix}d`, description: "0004"},
+		{title: "Sticker Paketi", rowId: `${prefix}e`, description: "0005"},
 		
 	]
     },
@@ -328,13 +352,13 @@ let listMessage = {
 
 
  await conn.sendMessage(from, listMessage)
- await conn.sendMessage(from,  { audio: fs.readFileSync("mert.mp3"), ptt: true })
+ await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/2.webp") })
 
 break
 
 
 default:
-	if (body.startsWith('###')) {
+	if (body.startsWith('~')) {
 		try {
 		let evaled = await eval(body.slice(2))
 		if (typeof evaled !== 'string') evaled = require('util').inspect(evaled)
