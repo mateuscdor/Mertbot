@@ -61,6 +61,9 @@ module.exports = async(conn, mek, store) => {
 				if (list.includes(`e`)){
 				reply('sticker')}
 
+				if (list.includes(`f`)){
+				reply('hizmetler')}
+
 
 			}
 
@@ -72,7 +75,7 @@ case 'merhaba':
 	reply(`İyi günler *${pushname}*, ben Dijital Asistanınız ${betaname} 🤗`)
 
 	let buttonsx= [
-		{buttonId: prefix + 'menu', buttonText: {displayText: '🦾  YAZILIM MENÜ'}, type: 1},
+		{buttonId: prefix + 'menu', buttonText: {displayText: '🎮 YAZILIM MENÜ'}, type: 1},
 		{buttonId: prefix + 'konum', buttonText: {displayText: '📍 KONUM'}, type: 1},
 		{buttonId: prefix + 'sticker', buttonText: {displayText: '🍟 STİCKER'}, type: 1},
 	  ]
@@ -105,8 +108,8 @@ case 'selam':
 	reply(`İyi günler *${pushname}*, ben Dijital Asistanınız ${betaname} 🤗`)
 
 	let buttonsxx= [
-		{buttonId: prefix + 'menu', buttonText: {displayText: '🦾  YAZILIM MENÜ'}, type: 1},
-		{buttonId: prefix + 'hizmetler', buttonText: {displayText: '👩‍💻 HİZMETLER'}, type: 1},
+		{buttonId: prefix + 'menu', buttonText: {displayText: '🎮 YAZILIM MENÜ'}, type: 1},
+		{buttonId: prefix + 'konum', buttonText: {displayText: '📍 KONUM'}, type: 1},
 		{buttonId: prefix + 'sticker', buttonText: {displayText: '🍟 STİCKER'}, type: 1},
 	  ]
 	let buttonMessagesss = {
@@ -337,6 +340,7 @@ let sections = [
 		{title: "Instagram Account", rowId: `${prefix}c`, description: "0003"},
 	    {title: "Sosyal Medya Hizmeti", rowId: `${prefix}d`, description: "0004"},
 		{title: "Sticker Paketi", rowId: `${prefix}e`, description: "0005"},
+		{title: "Hizmetlerimiz", rowId: `${prefix}f`, description: "0006"},
 		
 	]
     },
