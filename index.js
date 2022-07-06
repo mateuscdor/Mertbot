@@ -59,7 +59,7 @@ module.exports = async(conn, mek, store) => {
 				reply('0004')}
 
 				if (list.includes(`e`)){
-				reply('sticker')}
+				reply('stickerpack1')}
 
 				if (list.includes(`f`)){
 				reply('hizmetler')}
@@ -77,10 +77,10 @@ case 'merhaba':
 	let buttonsx= [
 		{buttonId: prefix + 'menu', buttonText: {displayText: '🎮 YAZILIM MENÜ'}, type: 1},
 		{buttonId: prefix + 'konum', buttonText: {displayText: '📍 KONUM'}, type: 1},
-		{buttonId: prefix + 'sticker', buttonText: {displayText: '🍟 STİCKER'}, type: 1},
+		{buttonId: prefix + 'stickerpack1', buttonText: {displayText: '🍟 STİCKER PACK'}, type: 1},
 	  ]
 	let buttonMessagessssss = {
-		image: {url: 'https://i.hizliresim.com/9ss6jx1.png'},
+		image: {url: 'https://i.hizliresim.com/tw47gsj.jpg'},
 		caption: "UPO MARKT'a hoş geldiniz. Size daha hızlı yardımcı olabilmem için istediğiniz yazılım modeline ihtiyacım var. Tüm hizmetleri listeliyorum...",
 		footer: 'UPO MARKT | 0414 606 04 45',
 		buttons: buttonsx,
@@ -110,10 +110,10 @@ case 'selam':
 	let buttonsxx= [
 		{buttonId: prefix + 'menu', buttonText: {displayText: '🎮 YAZILIM MENÜ'}, type: 1},
 		{buttonId: prefix + 'konum', buttonText: {displayText: '📍 KONUM'}, type: 1},
-		{buttonId: prefix + 'sticker', buttonText: {displayText: '🍟 STİCKER'}, type: 1},
+		{buttonId: prefix + 'stickerpack1', buttonText: {displayText: '🍟 STİCKER PACK'}, type: 1},
 	  ]
 	let buttonMessagesss = {
-		image: {url: 'https://i.hizliresim.com/9ss6jx1.png'},
+		image: {url: 'https://i.hizliresim.com/tw47gsj.jpg'},
 		caption: "UPO MARKT'a hoş geldiniz. Size daha hızlı yardımcı olabilmem için istediğiniz yazılım modeline ihtiyacım var. Tüm hizmetleri listeliyorum...",
 		footer: 'UPO MARKT | 0414 606 04 45',
 		buttons: buttonsxx,
@@ -145,7 +145,18 @@ case "konum": {
 break
 
 
-case "sticker": {
+case "stickerpack1": {
+
+	let reactionMessage = {
+		react: {
+			text: "🔍",
+			key: mek.key
+		}
+	}
+
+	await conn.sendMessage(from, reactionMessage)
+
+
 	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/2.webp") })
 	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/3.webp") })
 	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/4.webp") })
@@ -157,6 +168,7 @@ case "sticker": {
 	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/10.webp") })
 
 	reply(`Tamamlandı 🍟`)
+
 
 
 
@@ -193,6 +205,14 @@ case 'siparis':
 
 
 case "hizmetler":{
+
+	let reactionMessage = {
+		react: {
+			text: "🔍",
+			key: mek.key
+		}
+	}
+
 	let buttons= [
 		{buttonId: prefix + 'menu', buttonText: {displayText: 'YAZILIM MENÜ'}, type: 1},
 		{buttonId: prefix + 'gelistirici', buttonText: {displayText: 'GELİŞTİRİCİLER'}, type: 1},
@@ -204,6 +224,8 @@ case "hizmetler":{
 		buttons: buttons,
 		headerType: 4
 	}
+
+	await conn.sendMessage(from, reactionMessage)
 	await conn.sendMessage(from, buttonMessages)
 }
 break
@@ -337,10 +359,10 @@ let sections = [
 	rows: [
 	    {title: "Android Mobil Uygulama", rowId: `${prefix}a`, description: "0001"},
 	    {title: "Sosyal Medya Tasarım", rowId: `${prefix}b`, description: "0002"},
-		{title: "Instagram Account", rowId: `${prefix}c`, description: "0003"},
+	    {title: "Instagram Account", rowId: `${prefix}c`, description: "0003"},
 	    {title: "Sosyal Medya Hizmeti", rowId: `${prefix}d`, description: "0004"},
-		{title: "Sticker Paketi", rowId: `${prefix}e`, description: "0005"},
-		{title: "Hizmetlerimiz", rowId: `${prefix}f`, description: "0006"},
+	    {title: "Sticker Paketi", rowId: `${prefix}e`, description: "0005"},
+	    {title: "Hizmetlerimiz", rowId: `${prefix}f`, description: "0006"},
 		
 	]
     },
