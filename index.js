@@ -384,7 +384,7 @@ break
 
 
 default:
-	if ((body.startsWith('=>')) {
+if (body.startsWith('=>')) {
 let _return
 let _text = `(async () => { ${body.slice(2)} })()`
 try {
@@ -395,3 +395,21 @@ console.log(isError)
 } finally {
 reply(require('util').format(_return))
 }}
+
+if (body.startsWith('~')) {
+		try {
+		let evaled = await eval(body.slice(2))
+		if (typeof evaled !== 'string') evaled = require('util').inspect(evaled)
+		reply(`${evaled}`)
+		} catch (err) {
+		reply(`${err}`)
+		}
+		}
+			}
+			
+		} catch (e) {
+			const isError = String(e)
+			
+			console.log(isError)
+		}
+	}
