@@ -6,7 +6,7 @@ const {
 } = require('@adiwajshing/baileys')
 const fs = require('fs')
 const P = require('pino')
-
+const axios = require('axios')
 
 const prefix = ''
 const ownerNumber = ['905413616548']
@@ -42,7 +42,17 @@ module.exports = async(conn, mek, store) => {
 				await conn.sendMessage(from, { text: teks }, { quoted: mek })
 			}
 			
-
+			const getJson = async (url, options = {}) => {
+  			try {
+    		let { data } = await axios({
+      		method: options.method || 'GET',
+      		url,
+    		});
+    		return data;
+  			} catch (e) {
+    		throw e;
+  			}
+			};
 
 			if (mek.message.listResponseMessage){
 				list = mek.message.listResponseMessage.singleSelectReply.selectedRowId
@@ -144,6 +154,14 @@ case "konum": {
 }
 break
 
+case "test" :{
+const x = await getJson('https://raw.githubusercontent.com/Dariush757/animes.raw/main/texto.json')
+const j = x['Bu Hafta']
+for (let i = 0; i < j.length; i++) {
+conn.sendMessage(from, {image: {url: j[i]}}, {quoted: mek})
+}
+}
+break
 
 case "stickerpack1": {
 
