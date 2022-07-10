@@ -149,7 +149,8 @@ await conn.sendMessage(from, buttonMessagesss)
 break
 
 case "a101":
-conn.sendMessage(from, {image: {url: c[i]}})
+reply(${c})
+await conn.sendMessage(from, {image: {url: c[i]}})
 break
 
 case "konum": {
