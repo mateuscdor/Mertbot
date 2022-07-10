@@ -173,7 +173,7 @@ case "test" :{
 		{buttonId: prefix + 'haftaninyildizlari', buttonText: {displayText: 'Haftanın Yıldızları'}, type: 1},
 	  ]
 	let buttonMessages = {
-		image: {url: ''},
+		image: {url: 'https://ayb.akinoncdn.com/static_omnishop/ayb775/assets/img/logo%40a101-2x.png'},
 		caption: "*A101 AFİŞLER*",
 		footer: 'UPO MARKT | 0414 606 04 45',
 		buttons: buttons,
