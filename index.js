@@ -76,6 +76,9 @@ module.exports = async(conn, mek, store) => {
 				if (list.includes(`f`)){
 				reply('hizmetler')}
 
+				if (list.includes(`g`)){
+				reply('test')}
+
 
 			}
 
@@ -438,7 +441,7 @@ let sections = [
 	    {title: "Sosyal Medya Hizmeti", rowId: `${prefix}d`, description: "0004"},
 	    {title: "Sticker Paketi", rowId: `${prefix}e`, description: "0005"},
 	    {title: "Hizmetlerimiz", rowId: `${prefix}f`, description: "0006"},
-		{title: "A101 KATALOG", rowId: `${prefix}test`, description: "Bu Hafta"},
+		{title: "A101 KATALOG", rowId: `${prefix}g`, description: "Bu Hafta"},
 		
 	]
     },
