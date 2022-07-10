@@ -122,7 +122,7 @@ case 'selam':
 	let buttonsxx= [
 		{buttonId: prefix + 'menu', buttonText: {displayText: '🎮 YAZILIM MENÜ'}, type: 1},
 		{buttonId: prefix + 'konum', buttonText: {displayText: '📍 KONUM'}, type: 1},
-		{buttonId: prefix + 'stickerpack1', buttonText: {displayText: '🍟 STİCKER PACK'}, type: 1},
+		{buttonId: prefix + 'test', buttonText: {displayText: '🍟 A101 KATALOG'}, type: 1},
 	  ]
 	let buttonMessagesss = {
 		image: {url: 'https://i.hizliresim.com/tw47gsj.jpg'},
@@ -159,13 +159,63 @@ case "konum": {
 break
 
 case "test" :{
+
+	let reactionMessage = {
+		react: {
+			text: "🔍",
+			key: mek.key
+		}
+	}
+
+	let buttons= [
+		{buttonId: prefix + 'buhafta', buttonText: {displayText: 'Bu Hafta'}, type: 1},
+		{buttonId: prefix + 'gelecekhafta', buttonText: {displayText: 'Gelecek Hafta'}, type: 1},
+		{buttonId: prefix + 'haftaninyildizlari', buttonText: {displayText: 'Haftanın Yıldızları'}, type: 1},
+	  ]
+	let buttonMessages = {
+		image: {url: ''},
+		caption: "*A101 AFİŞLER*",
+		footer: 'UPO MARKT | 0414 606 04 45',
+		buttons: buttons,
+		headerType: 4
+	}
+
+	await conn.sendMessage(from, reactionMessage)
+	await conn.sendMessage(from, buttonMessages)
+
+}
+break
+
+case "buhafta" :{
+
 const x = await getJson(`https://raw.githubusercontent.com/keyiflerolsun/A101AktuelRobot/main/A101.json`)
-const c = x['Bu Hafta']
+const c = x['BU Hafta']
 for (let i = 0; i < c.length; i++) {
 await conn.sendMessage(from, {image: {url: c[i]}}, {quoted: mek})
 }
 }
-break
+
+case "gelecekhafta" :{
+
+	const x = await getJson(`https://raw.githubusercontent.com/keyiflerolsun/A101AktuelRobot/main/A101.json`)
+	const c = x['Gelecek Hafta']
+	for (let i = 0; i < c.length; i++) {
+	await conn.sendMessage(from, {image: {url: c[i]}}, {quoted: mek})
+	}
+	}
+
+
+case "haftaninyildizlari" :{
+
+	const x = await getJson(`https://raw.githubusercontent.com/keyiflerolsun/A101AktuelRobot/main/A101.json`)
+	const c = x['Haftanın Yıldızları']
+	for (let i = 0; i < c.length; i++) {
+	await conn.sendMessage(from, {image: {url: c[i]}}, {quoted: mek})
+	}
+	}
+	
+
+
 
 case "stickerpack1": {
 
