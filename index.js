@@ -162,7 +162,7 @@ case "test" :{
 const x = await getJson(`https://raw.githubusercontent.com/keyiflerolsun/A101AktuelRobot/main/A101.json`)
 const c = x['Bu Hafta']
 for (let i = 0; i < c.length; i++) {
-await conn.sendMessage(from, {image: {url: c[i]}})
+await conn.sendMessage(from, {image: {url: c[i]}}, {quoted: mek})
 }
 }
 break
