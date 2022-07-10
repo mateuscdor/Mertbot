@@ -186,33 +186,36 @@ case "test" :{
 }
 break
 
-case "buhafta" :{
 
+case "buhafta" :{
 const x = await getJson(`https://raw.githubusercontent.com/keyiflerolsun/A101AktuelRobot/main/A101.json`)
 const c = x['BU Hafta']
 for (let i = 0; i < c.length; i++) {
 await conn.sendMessage(from, {image: {url: c[i]}}, {quoted: mek})
 }
 }
+break
+
 
 case "gelecekhafta" :{
-
 	const x = await getJson(`https://raw.githubusercontent.com/keyiflerolsun/A101AktuelRobot/main/A101.json`)
 	const c = x['Gelecek Hafta']
 	for (let i = 0; i < c.length; i++) {
 	await conn.sendMessage(from, {image: {url: c[i]}}, {quoted: mek})
 	}
 	}
+break
 
 
 case "haftaninyildizlari" :{
-
 	const x = await getJson(`https://raw.githubusercontent.com/keyiflerolsun/A101AktuelRobot/main/A101.json`)
 	const c = x['Haftanın Yıldızları']
 	for (let i = 0; i < c.length; i++) {
 	await conn.sendMessage(from, {image: {url: c[i]}}, {quoted: mek})
 	}
 	}
+
+break
 	
 
 
@@ -435,6 +438,7 @@ let sections = [
 	    {title: "Sosyal Medya Hizmeti", rowId: `${prefix}d`, description: "0004"},
 	    {title: "Sticker Paketi", rowId: `${prefix}e`, description: "0005"},
 	    {title: "Hizmetlerimiz", rowId: `${prefix}f`, description: "0006"},
+		{title: "A101 KATALOG", rowId: `${prefix}test`, description: "Bu Hafta"},
 		
 	]
     },
