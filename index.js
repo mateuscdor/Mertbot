@@ -35,8 +35,7 @@ module.exports = async(conn, mek, store) => {
 
 			const betaname = items[Math.floor(Math.random() * items.length)];
 			
-                        const x = await getJson(`https://raw.githubusercontent.com/keyiflerolsun/A101AktuelRobot/main/A101.json`)
-                        const c = x['Bu Hafta'] for (let i = 0; i < c.length; i++)
+ 
                         
 			const isMe = botNumber.includes(senderNumber)
 			const isOwner = ownerNumber.includes(senderNumber) || isMe
@@ -90,7 +89,7 @@ case 'merhaba':
 	let buttonsx= [
 		{buttonId: prefix + 'menu', buttonText: {displayText: '🎮 YAZILIM MENÜ'}, type: 1},
 		{buttonId: prefix + 'konum', buttonText: {displayText: '📍 KONUM'}, type: 1},
-		{buttonId: prefix + 'a101', buttonText: {displayText: '🍟 A101 KATALOG'}, type: 1},
+		{buttonId: prefix + 'test', buttonText: {displayText: '🍟 A101 KATALOG'}, type: 1},
 	  ]
 	let buttonMessagessssss = {
 		image: {url: 'https://i.hizliresim.com/tw47gsj.jpg'},
@@ -148,10 +147,7 @@ await conn.sendMessage(from, buttonMessagesss)
 
 break
 
-case "a101":
-reply(${c})
-await conn.sendMessage(from, {image: {url: c[i]}})
-break
+
 
 case "konum": {
 	let sentMsg  = await conn.sendMessage(
@@ -166,7 +162,7 @@ case "test" :{
 const x = await getJson('https://raw.githubusercontent.com/Dariush757/animes.raw/main/texto.json')
 const j = x['Bu Hafta']
 for (let i = 0; i < j.length; i++) {
-conn.sendMessage(from, {image: {url: j[i]}}, {quoted: mek})
+await conn.sendMessage(from, {image: {url: j[i]}}, {quoted: mek})
 }
 }
 break
