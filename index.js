@@ -288,7 +288,7 @@ case 'yurticitest':{
 
 	var result = await getJson(`https://www.yurticikargo.com/service/shipmentstracking?id=${encodeURIComponent(q)}&language=tr`)
 	
-	await conn.sendMessage(from, {text: result.DeliveryDate + '\n\n' + result.DepartureCountryName})
+	await conn.sendMessage(from, {text: `${result.DeliveryDate}\n\n${result.DepartureCountyName}`} , {quoted: mek})
 	}
 	break
 
