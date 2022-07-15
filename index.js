@@ -378,7 +378,7 @@ case 'yurtici':{
 
 	var result = await getJson(`https://www.yurticikargo.com/service/shipmentstracking?id=${encodeURIComponent(q)}&language=tr`)
 	
-	await conn.sendMessage(from, {text: `*Gönderi Takibi*`+`\n\n${result.DeliveryDate}\n\n${result.DepartureCountyName}`} , {quoted: mek})
+	await conn.sendMessage(from, {text: `*📦 Kargo Gönderi Takibi 📦*`+`\n\nTeslim tarihi : ${result.DeliveryDate}\n\nSipariş durumu : ${result.ShipmentStatus}\n\nTeslimat birimi tel : ${result.DeliveryUnitTel}\n\nKalkış birimi : ${result.DepartureUnitName}\n\nKalkış şehir : ${result.DepartureCityName}\n\nKalkış ilçe : ${result.DepartureCountyName}\n\nGönderici : ${result.Sender}\n\nTeslimat birimi : ${result.DeliveryUnitName}\n\nTeslimat şehir : ${result.DeliveryCityName}\n\nTeslimat ilçe: ${result.DeliveryCountyName}\n\nAlıcı : ${result.DeliveredTo}`} , {quoted: mek})
 	}
 
 break
