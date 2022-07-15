@@ -58,26 +58,174 @@ module.exports = async(conn, mek, store) => {
 
 			if (mek.message.listResponseMessage){
 				list = mek.message.listResponseMessage.singleSelectReply.selectedRowId
-				if (list.includes(`a`)){
-				reply('0001')}
+				if (list.includes(`a`)){ //1. listeden veriyi çek
+					let reactionMessage = {
+						react: {
+							text: "🔍",
+							key: mek.key
+						}
+					}
+				
+					let templateButtons = [
+						{index: 1, urlButton: {displayText: 'Web Sitemiz', url: 'https://codermert.github.io/'}},
+						{index: 2, callButton: {displayText: 'Hemen Ara', phoneNumber: '+90 541 361 65 48'}},
+						{index: 3, quickReplyButton: {displayText: 'SATIN AL', id: prefix + 'siparis'}},
+				
+						
+					  ]
+				
+					let buttonMessage = {
+						image: {url: 'https://aday.ius.edu.ba/sites/default/files/artificial-intelligence-2167835_1920.jpg'},
+						caption: "*Android Mobil Uygulama*\n\n🏷️ ₺1000'den başlayan fiyatlarla\n 🧑‍💻 Android OS\n\n\n30 dakika içerisinde sipariş ver, %30 indirim yakala",
+						footer: 'UPO MARKT | 0414 606 04 45',
+						templateButtons: templateButtons,
+						headerType: 4
+						
+					}
+					await conn.sendMessage(from, reactionMessage)
+					await conn.sendMessage(from, buttonMessage)
+				
+				}
 
 				if (list.includes(`b`)){
-				reply('0002')}
+				
+					let reactionMessage2 = {
+						react: {
+							text: "🔍",
+							key: mek.key
+						}
+					}
+				
+					let templateButtons2 = [
+						{index: 1, urlButton: {displayText: 'Web Sitemiz', url: 'https://codermert.github.io/'}},
+						{index: 2, callButton: {displayText: 'Hemen Ara', phoneNumber: '+90 541 361 65 48'}},
+						{index: 3, quickReplyButton: {displayText: 'SATIN AL', id: prefix + 'siparis'}},
+				
+						
+					  ]
+				
+					let buttonMessage2 = {
+						image: {url: 'https://socialmedia.com.tr/wp-content/uploads/2022/06/social-audio.png'},
+						caption: "*Sosyal Medya Tasarım*\n\n🏷️ ₺100'den başlayan fiyatlarla\n 🧑‍💻 EPS - PSD\n\n\n30 dakika içerisinde sipariş ver, %30 indirim yakala",
+						footer: 'UPO MARKT | 0414 606 04 45',
+						templateButtons: templateButtons2,
+						headerType: 4
+						
+					}
+					await conn.sendMessage(from, reactionMessage2)
+					await conn.sendMessage(from, buttonMessage2)
+
+				}
 
 				if (list.includes(`c`)){
-				reply('0003')}
+				
+					let reactionMessage3 = {
+						react: {
+							text: "🔍",
+							key: mek.key
+						}
+					}
+				
+					let templateButtons3 = [
+						{index: 1, urlButton: {displayText: 'Web Sitemiz', url: 'https://codermert.github.io/'}},
+						{index: 2, callButton: {displayText: 'Hemen Ara', phoneNumber: '+90 541 361 65 48'}},
+						{index: 3, quickReplyButton: {displayText: 'SATIN AL', id: prefix + 'siparis'}},
+			
+						
+					  ]
+				
+					let buttonMessage3 = {
+						image: {url: 'https://www.cybermagonline.com/img/sayfa/phone-with-instagram-popping-up-icons-274845-85.jpg'},
+						caption: "*Instagram Account*\n\n🏷️ ₺1'den başlayan fiyatlarla\n 🧑‍💻 Telefon Doğrulaması \nHesap oluşturucumuz, popüler SMS siteleriyle hesaplarınızı otomatik olarak Telefonla Doğrulayabilir.\n\n 🧑‍💻 Oluşturduğumuz IG hesaplarına Türk isim - biyografi, resim hatta özel avatar yüklüyoruz!\n\n\n30 dakika içerisinde sipariş ver, %30 indirim yakala",
+						footer: 'UPO MARKT | 0414 606 04 45',
+						templateButtons: templateButtons3,
+						headerType: 4
+						
+					}
+					await conn.sendMessage(from, reactionMessage3)
+					await conn.sendMessage(from, buttonMessage3)
+				
+				
+				}
 
 				if (list.includes(`d`)){
-				reply('0004')}
-
-				if (list.includes(`e`)){
-				reply('stickerpack1')}
+					let reactionMessage4 = {
+						react: {
+							text: "🔍",
+							key: mek.key
+						}
+					}
+				
+					let templateButtons4 = [
+						{index: 1, urlButton: {displayText: 'Web Sitemiz', url: 'https://codermert.github.io/'}},
+						{index: 2, callButton: {displayText: 'Hemen Ara', phoneNumber: '+90 541 361 65 48'}},
+						{index: 3, quickReplyButton: {displayText: 'SATIN AL', id: prefix + 'siparis'}},
+			
+						
+					  ]
+				
+					let buttonMessage4 = {
+						image: {url: 'https://cdn.wmaraci.com/blog/smm-panel.png'},
+						caption: "*Sosyal Medya Hizmeti*\n\n🏷️ ₺200'den başlayan fiyatlarla\n 🧑‍💻 Tüm Sosyal Medya Ağlarını Tek Panelden Rahatça Yönetin\n\n\n30 dakika içerisinde sipariş ver, %30 indirim yakala",
+						footer: 'UPO MARKT | 0414 606 04 45',
+						templateButtons: templateButtons4,
+						headerType: 4
+						
+					}
+					await conn.sendMessage(from, reactionMessage4)
+					await conn.sendMessage(from, buttonMessage4)
+				
+				}
 
 				if (list.includes(`f`)){
-				reply('hizmetler')}
+
+	let reactionMessage = {
+		react: {
+			text: "🔍",
+			key: mek.key
+		}
+	}
+
+	let buttons= [
+		{buttonId: prefix + 'menu', buttonText: {displayText: 'YAZILIM MENÜ'}, type: 1},
+		{buttonId: prefix + 'gelistirici', buttonText: {displayText: 'GELİŞTİRİCİLER'}, type: 1},
+	  ]
+	let buttonMessages = {
+		image: {url: 'https://miro.medium.com/max/1838/1*fkyEgZnbf3jJP3-G7xykLg.jpeg'},
+		caption: "*HİZMETLERİMİZ*\n\nMobil Uygulama\nWeb Tabanlı Yazılımlar\nWeb Tasarımı\nEğitim Yazılımı\nPersonel ve Saha Takip\n\n\nFirmanıza özel kurumsal web ve mobil yazılımlara ihtiyacınız varsa bizimle iletişime geçebilirsiniz.",
+		footer: 'UPO MARKT | 0414 606 04 45',
+		buttons: buttons,
+		headerType: 4
+	}
+
+	await conn.sendMessage(from, reactionMessage)
+	await conn.sendMessage(from, buttonMessages)
+				}
 
 				if (list.includes(`g`)){
-				reply('test')}
+					let reactionMessage = {
+						react: {
+							text: "🔍",
+							key: mek.key
+						}
+					}
+				
+					let buttons= [
+						{buttonId: prefix + 'buhafta', buttonText: {displayText: 'Bu Hafta'}, type: 1},
+						{buttonId: prefix + 'gelecekhafta', buttonText: {displayText: 'Gelecek Hafta'}, type: 1},
+						{buttonId: prefix + 'haftaninyildizlari', buttonText: {displayText: 'Haftanın Yıldızları'}, type: 1},
+					  ]
+					let buttonMessages = {
+						image: {url: 'https://ayb.akinoncdn.com/static_omnishop/ayb775/assets/img/logo%40a101-2x.png'},
+						caption: "*A101 AFİŞLER*",
+						footer: 'UPO MARKT | 0414 606 04 45',
+						buttons: buttons,
+						headerType: 4
+					}
+				
+					await conn.sendMessage(from, reactionMessage)
+					await conn.sendMessage(from, buttonMessages)
+			}
 
 
 			}
@@ -161,33 +309,6 @@ case "konum": {
 }
 break
 
-case "test" :{
-
-	let reactionMessage = {
-		react: {
-			text: "🔍",
-			key: mek.key
-		}
-	}
-
-	let buttons= [
-		{buttonId: prefix + 'buhafta', buttonText: {displayText: 'Bu Hafta'}, type: 1},
-		{buttonId: prefix + 'gelecekhafta', buttonText: {displayText: 'Gelecek Hafta'}, type: 1},
-		{buttonId: prefix + 'haftaninyildizlari', buttonText: {displayText: 'Haftanın Yıldızları'}, type: 1},
-	  ]
-	let buttonMessages = {
-		image: {url: 'https://ayb.akinoncdn.com/static_omnishop/ayb775/assets/img/logo%40a101-2x.png'},
-		caption: "*A101 AFİŞLER*",
-		footer: 'UPO MARKT | 0414 606 04 45',
-		buttons: buttons,
-		headerType: 4
-	}
-
-	await conn.sendMessage(from, reactionMessage)
-	await conn.sendMessage(from, buttonMessages)
-
-}
-break
 
 
 case "buhafta" :{
@@ -223,37 +344,6 @@ break
 
 
 
-case "stickerpack1": {
-
-	let reactionMessage = {
-		react: {
-			text: "🔍",
-			key: mek.key
-		}
-	}
-
-	await conn.sendMessage(from, reactionMessage)
-
-
-	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/2.webp") })
-	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/3.webp") })
-	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/4.webp") })
-	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/5.webp") })
-	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/6.webp") })
-	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/7.webp") })
-	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/8.webp") })
-	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/9.webp") })
-	await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/10.webp") })
-
-	reply(`Tamamlandı 🍟`)
-
-
-
-
-}
-break
-
-
 case "gelistirici":
 	let vcard = 'BEGIN:VCARD\n' // metadata of the contact card
             + 'VERSION:3.0\n' 
@@ -282,164 +372,19 @@ case 'siparis':
 
 
 
-case 'yurticitest':{
+case 'yurtici':{
 
-	if(!Number(q))return reply(`I'm sorry, the ID code I entered is incorrect. Your purchase ID only has numbers, not letters.`)
+	if(!Number(q))return reply(`Üzgünüm, girdiğiniz sipariş numarası yanlış. Sipariş numaranızda harfler değil, yalnızca sayılar vardır.`)
 
 	var result = await getJson(`https://www.yurticikargo.com/service/shipmentstracking?id=${encodeURIComponent(q)}&language=tr`)
 	
-	await conn.sendMessage(from, {text: `${result.DeliveryDate}\n\n${result.DepartureCountyName}`} , {quoted: mek})
+	await conn.sendMessage(from, {text: `*Gönderi Takibi*`+`\n\n${result.DeliveryDate}\n\n${result.DepartureCountyName}`} , {quoted: mek})
 	}
-	break
 
 break
 
 
 
-case "hizmetler":{
-
-	let reactionMessage = {
-		react: {
-			text: "🔍",
-			key: mek.key
-		}
-	}
-
-	let buttons= [
-		{buttonId: prefix + 'menu', buttonText: {displayText: 'YAZILIM MENÜ'}, type: 1},
-		{buttonId: prefix + 'gelistirici', buttonText: {displayText: 'GELİŞTİRİCİLER'}, type: 1},
-	  ]
-	let buttonMessages = {
-		image: {url: 'https://miro.medium.com/max/1838/1*fkyEgZnbf3jJP3-G7xykLg.jpeg'},
-		caption: "*HİZMETLERİMİZ*\n\nMobil Uygulama\nWeb Tabanlı Yazılımlar\nWeb Tasarımı\nEğitim Yazılımı\nPersonel ve Saha Takip\n\n\nFirmanıza özel kurumsal web ve mobil yazılımlara ihtiyacınız varsa bizimle iletişime geçebilirsiniz.",
-		footer: 'UPO MARKT | 0414 606 04 45',
-		buttons: buttons,
-		headerType: 4
-	}
-
-	await conn.sendMessage(from, reactionMessage)
-	await conn.sendMessage(from, buttonMessages)
-}
-break
-
-
-
-case "0001":
-	let reactionMessage = {
-		react: {
-			text: "🔍",
-			key: mek.key
-		}
-	}
-
-	let templateButtons = [
-		{index: 1, urlButton: {displayText: 'Web Sitemiz', url: 'https://codermert.github.io/'}},
-		{index: 2, callButton: {displayText: 'Hemen Ara', phoneNumber: '+90 541 361 65 48'}},
-		{index: 3, quickReplyButton: {displayText: 'SATIN AL', id: prefix + 'siparis'}},
-
-		
-	  ]
-
-	let buttonMessage = {
-		image: {url: 'https://aday.ius.edu.ba/sites/default/files/artificial-intelligence-2167835_1920.jpg'},
-		caption: "*Android Mobil Uygulama*\n\n🏷️ ₺1000'den başlayan fiyatlarla\n 🧑‍💻 Android OS\n\n\n30 dakika içerisinde sipariş ver, %30 indirim yakala",
-		footer: 'UPO MARKT | 0414 606 04 45',
-		templateButtons: templateButtons,
-		headerType: 4
-		
-	}
-	await conn.sendMessage(from, reactionMessage)
-	await conn.sendMessage(from, buttonMessage)
-	 break
-
-case "0002":
-	let reactionMessage2 = {
-		react: {
-			text: "🔍",
-			key: mek.key
-		}
-	}
-
-	let templateButtons2 = [
-		{index: 1, urlButton: {displayText: 'Web Sitemiz', url: 'https://codermert.github.io/'}},
-		{index: 2, callButton: {displayText: 'Hemen Ara', phoneNumber: '+90 541 361 65 48'}},
-		{index: 3, quickReplyButton: {displayText: 'SATIN AL', id: prefix + 'siparis'}},
-
-		
-	  ]
-
-	let buttonMessage2 = {
-		image: {url: 'https://socialmedia.com.tr/wp-content/uploads/2022/06/social-audio.png'},
-		caption: "*Sosyal Medya Tasarım*\n\n🏷️ ₺100'den başlayan fiyatlarla\n 🧑‍💻 EPS - PSD\n\n\n30 dakika içerisinde sipariş ver, %30 indirim yakala",
-		footer: 'UPO MARKT | 0414 606 04 45',
-		templateButtons: templateButtons2,
-		headerType: 4
-		
-	}
-	await conn.sendMessage(from, reactionMessage2)
-	await conn.sendMessage(from, buttonMessage2)
-	
-	 break
-
-	 
- case "0003":
-		let reactionMessage3 = {
-			react: {
-				text: "🔍",
-				key: mek.key
-			}
-		}
-	
-		let templateButtons3 = [
-			{index: 1, urlButton: {displayText: 'Web Sitemiz', url: 'https://codermert.github.io/'}},
-			{index: 2, callButton: {displayText: 'Hemen Ara', phoneNumber: '+90 541 361 65 48'}},
-			{index: 3, quickReplyButton: {displayText: 'SATIN AL', id: prefix + 'siparis'}},
-
-			
-		  ]
-	
-		let buttonMessage3 = {
-			image: {url: 'https://www.cybermagonline.com/img/sayfa/phone-with-instagram-popping-up-icons-274845-85.jpg'},
-			caption: "*Instagram Account*\n\n🏷️ ₺1'den başlayan fiyatlarla\n 🧑‍💻 Telefon Doğrulaması \nHesap oluşturucumuz, popüler SMS siteleriyle hesaplarınızı otomatik olarak Telefonla Doğrulayabilir.\n\n 🧑‍💻 Oluşturduğumuz IG hesaplarına Türk isim - biyografi, resim hatta özel avatar yüklüyoruz!\n\n\n30 dakika içerisinde sipariş ver, %30 indirim yakala",
-			footer: 'UPO MARKT | 0414 606 04 45',
-			templateButtons: templateButtons3,
-			headerType: 4
-			
-		}
-		await conn.sendMessage(from, reactionMessage3)
-		await conn.sendMessage(from, buttonMessage3)
-		
-		 break
-
-
- case "0004":
-		let reactionMessage4 = {
-			react: {
-				text: "🔍",
-				key: mek.key
-			}
-		}
-	
-		let templateButtons4 = [
-			{index: 1, urlButton: {displayText: 'Web Sitemiz', url: 'https://codermert.github.io/'}},
-			{index: 2, callButton: {displayText: 'Hemen Ara', phoneNumber: '+90 541 361 65 48'}},
-			{index: 3, quickReplyButton: {displayText: 'SATIN AL', id: prefix + 'siparis'}},
-
-			
-		  ]
-	
-		let buttonMessage4 = {
-			image: {url: 'https://cdn.wmaraci.com/blog/smm-panel.png'},
-			caption: "*Sosyal Medya Hizmeti*\n\n🏷️ ₺200'den başlayan fiyatlarla\n 🧑‍💻 Tüm Sosyal Medya Ağlarını Tek Panelden Rahatça Yönetin\n\n\n30 dakika içerisinde sipariş ver, %30 indirim yakala",
-			footer: 'UPO MARKT | 0414 606 04 45',
-			templateButtons: templateButtons4,
-			headerType: 4
-			
-		}
-		await conn.sendMessage(from, reactionMessage4)
-		await conn.sendMessage(from, buttonMessage4)
-		
-		 break
 
 
 
@@ -449,13 +394,12 @@ case "menu":
 let sections = [
     {
 	rows: [
-	    {title: "Android Mobil Uygulama", rowId: `${prefix}a`, description: "0001"},
-	    {title: "Sosyal Medya Tasarım", rowId: `${prefix}b`, description: "0002"},
-	    {title: "Instagram Account", rowId: `${prefix}c`, description: "0003"},
-	    {title: "Sosyal Medya Hizmeti", rowId: `${prefix}d`, description: "0004"},
-	    {title: "Sticker Paketi", rowId: `${prefix}e`, description: "0005"},
-	    {title: "Hizmetlerimiz", rowId: `${prefix}f`, description: "0006"},
-		{title: "A101 KATALOG", rowId: `${prefix}g`, description: "Bu Hafta"},
+	    {title: "Android Mobil Uygulama", rowId: `${prefix}a`, description: ""},
+	    {title: "Sosyal Medya Tasarım", rowId: `${prefix}b`, description: ""},
+	    {title: "Instagram Account", rowId: `${prefix}c`, description: ""},
+	    {title: "Sosyal Medya Hizmeti", rowId: `${prefix}d`, description: ""},
+	    {title: "Hizmetlerimiz", rowId: `${prefix}f`, description: ""},
+		{title: "A101 KATALOG", rowId: `${prefix}g`, description: ""},
 		
 	]
     },
