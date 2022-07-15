@@ -240,7 +240,7 @@ case 'merhaba':
 	let buttonsx= [
 		{buttonId: prefix + 'menu', buttonText: {displayText: '🎮 YAZILIM MENÜ'}, type: 1},
 		{buttonId: prefix + 'konum', buttonText: {displayText: '📍 KONUM'}, type: 1},
-		{buttonId: prefix + 'test', buttonText: {displayText: '🍟 A101 KATALOG'}, type: 1},
+		{buttonId: prefix + 'ooooops', buttonText: {displayText: '🍟 A101 KATALOG'}, type: 1},
 	  ]
 	let buttonMessagessssss = {
 		image: {url: 'https://i.hizliresim.com/tw47gsj.jpg'},
@@ -273,7 +273,7 @@ case 'selam':
 	let buttonsxx= [
 		{buttonId: prefix + 'menu', buttonText: {displayText: '🎮 YAZILIM MENÜ'}, type: 1},
 		{buttonId: prefix + 'konum', buttonText: {displayText: '📍 KONUM'}, type: 1},
-		{buttonId: prefix + 'test', buttonText: {displayText: '🍟 A101 KATALOG'}, type: 1},
+		{buttonId: prefix + 'ooooops', buttonText: {displayText: '🍟 A101 KATALOG'}, type: 1},
 	  ]
 	let buttonMessagesss = {
 		image: {url: 'https://i.hizliresim.com/tw47gsj.jpg'},
@@ -309,6 +309,35 @@ case "konum": {
 }
 break
 
+
+case "ooooops" : {
+
+
+	let reactionMessage = {
+		react: {
+			text: "🔍",
+			key: mek.key
+		}
+	}
+
+	let buttons= [
+		{buttonId: prefix + 'buhafta', buttonText: {displayText: 'Bu Hafta'}, type: 1},
+		{buttonId: prefix + 'gelecekhafta', buttonText: {displayText: 'Gelecek Hafta'}, type: 1},
+		{buttonId: prefix + 'haftaninyildizlari', buttonText: {displayText: 'Haftanın Yıldızları'}, type: 1},
+	  ]
+	let buttonMessages = {
+		image: {url: 'https://ayb.akinoncdn.com/static_omnishop/ayb775/assets/img/logo%40a101-2x.png'},
+		caption: "*A101 AFİŞLER*",
+		footer: 'UPO MARKT | 0414 606 04 45',
+		buttons: buttons,
+		headerType: 4
+	}
+
+	await conn.sendMessage(from, reactionMessage)
+	await conn.sendMessage(from, buttonMessages)
+
+}
+break
 
 
 case "buhafta" :{
