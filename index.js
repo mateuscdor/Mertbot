@@ -282,6 +282,21 @@ case 'siparis':
 
 
 
+case 'yurticitest':{
+
+
+		if(!Number(q))return reply(`I'm sorry, the ID code I entered is incorrect. Your purchase ID only has numbers, not letters.`)
+		
+		var result = await getJson(`https://www.yurticikargo.com/service/shipmentstracking?id=${encodeURIComponent(q)}&language=tr`)
+		
+		conn.sendMessage(from, {texto: result.DeliveryDate + '\n\n' + result.DepartureCountryName})
+		}
+
+
+break
+
+
+
 case "hizmetler":{
 
 	let reactionMessage = {
