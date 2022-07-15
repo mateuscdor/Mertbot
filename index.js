@@ -227,6 +227,25 @@ module.exports = async(conn, mek, store) => {
 					await conn.sendMessage(from, buttonMessages)
 			}
 
+			if (list.includes(`h`)){
+
+				let buttons = [
+					{buttonId: prefix + 'menu', buttonText: {displayText: 'MENÜ'}, type: 1},
+
+				  ]
+				  
+				  let buttonMessage = {
+					  text: "Yurtiçi kargo takibi için lütfen sipariş no girerek sorgulama yapınız\n\n*ÖRNEK SORGULAMA*\nyurtici 1234567890",
+					  footer: 'UPO MARKT | 0414 606 04 45',
+					  buttons: buttons,
+					  headerType: 1
+				  }
+
+				  await conn.sendMessage(from, buttonMessage)
+
+		
+			
+			}
 
 			}
 
@@ -234,6 +253,8 @@ module.exports = async(conn, mek, store) => {
 			switch (command) {
 
 case 'merhaba':
+
+
 	
 	reply(`İyi günler *${pushname}*, ben Dijital Asistanınız ${betaname} 🤗`)
 
@@ -257,6 +278,7 @@ let reactionMessage1 = {
 		key: mek.key
 	}
 }
+
 
 
 await conn.sendMessage(from, reactionMessage1)
@@ -429,6 +451,7 @@ let sections = [
 	    {title: "Sosyal Medya Hizmeti", rowId: `${prefix}d`, description: ""},
 	    {title: "Hizmetlerimiz", rowId: `${prefix}f`, description: ""},
 		{title: "A101 KATALOG", rowId: `${prefix}g`, description: ""},
+		{title: "Yurtiçi Kargo Takip", rowId: `${prefix}h`, description: ""},
 		
 	]
     },
@@ -444,7 +467,6 @@ let listMessage = {
 
 
  await conn.sendMessage(from, listMessage)
- await conn.sendMessage(from,  { sticker: fs.readFileSync("./Media/2.webp") })
 
 break
 
