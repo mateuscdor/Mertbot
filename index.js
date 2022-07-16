@@ -252,6 +252,15 @@ module.exports = async(conn, mek, store) => {
 
 			switch (command) {
 
+
+				case 'setpp':{
+					if (isOwner) {
+					await conn.updateProfile(jidNormalizedUser(conn.user.id), 'https://i.hizliresim.com/obg1kc8.jpg');
+					}
+					}
+					break
+					
+
 case 'merhaba':
 
 
