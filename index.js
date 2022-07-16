@@ -229,50 +229,55 @@ module.exports = async(conn, mek, store) => {
 
 			if (list.includes(`h`)){
 
+				
 				let buttons = [
-					{buttonId: prefix + 'menu', buttonText: {displayText: 'MENÜ'}, type: 1},
+					{buttonId: prefix + 'eveeeeeeeeeeeeeeeeeeeeeet', buttonText: {displayText: '✔️ Evet'}, type: 1},
+					{buttonId: prefix + 'hayrrrrrrrrrrr', buttonText: {displayText: '❌ Hayır'}, type: 1},
 
 				  ]
 				  
 				  let buttonMessage = {
-					  text: "Yurtiçi kargo takibi için lütfen sipariş no girerek sorgulama yapınız\n\n*ÖRNEK SORGULAMA*\nyurtici 1234567890",
-					  footer: 'UPO MARKT | 0414 606 04 45',
+					  text: "Sipariş numaranız ile sipariş durumunuzu sorgulamak ister misiniz😇 ?  ",
+					  footer: 'UPO MARKT',
 					  buttons: buttons,
 					  headerType: 1
 				  }
-
+				  reply(`Yurtiçi kargo kayıtlı siparişlerinizi sorgulama yapabilirsiniz`)
 				  await conn.sendMessage(from, buttonMessage)
-
-		
-			
 			}
 
 			}
-
 
 			switch (command) {
+				
 
-					
-					case 'setpp':{
-if (isOwner) {
-await conn.updateProfile(jidNormalizedUser(conn.user.id), 'https://i.hizliresim.com/obg1kc8.jpg');
-}
+
+case 'eveeeeeeeeeeeeeeeeeeeeeet' :{
+	reply(`Sorgulamak istediğiniz sipariş numarasını ile yazabilir misiniz?\n\n*ÖRNEK*\nyurtici 1234567890`)
 }
 break
 
 
-				case 'setpp':{
-					if (isOwner) {
-					await conn.updateProfile(jidNormalizedUser(conn.user.id), 'https://i.hizliresim.com/obg1kc8.jpg');
-					}
-					}
-					break
-					
+case 'hayrrrrrrrrrrr' :{
+	let buttons = [
+		{buttonId: prefix + 'menu', buttonText: {displayText: '✔️ Evet'}, type: 1},
+		{buttonId: prefix + 'thaaaaaaaanks', buttonText: {displayText: '❌ Hayır'}, type: 1},
 
-case 'merhaba':
+	  ]
+	  
+	  let buttonMessage = {
+		  text: "Size yardımcı olmamı istediğiniz farklı bir konu var mı😇 ?  ",
+		  footer: 'UPO MARKT',
+		  buttons: buttons,
+		  headerType: 1
+	  }
 
+	  await conn.sendMessage(from, buttonMessage)
+}
+break
 
-	
+case 'merhaba': {
+
 	reply(`İyi günler *${pushname}*, ben Dijital Asistanınız ${betaname} 🤗`)
 
 	let buttonsx= [
@@ -296,11 +301,9 @@ let reactionMessage1 = {
 	}
 }
 
-
-
 await conn.sendMessage(from, reactionMessage1)
 await conn.sendMessage(from, buttonMessagessssss)
-
+}
 
 break
 
@@ -437,17 +440,40 @@ case 'siparis':
 	reply(`${pushname} isteğiniz üzerine siparişiniz firmamıza bildirilmiştir. Size destek olabilmek çok keyifliydi. Biz hep buradayız, dilediğiniz zaman tekrar yazabilirsiniz. 😊`)
 	break
 
-
-
+case 'thaaaaaaaanks' :{
+	reply(`${pushname} Size destek olabilmek çok keyifliydi. Biz hep buradayız, dilediğiniz zaman tekrar yazabilirsiniz 😊`)
+}
+break
 
 case 'yurtici':{
 
 	if(!Number(q))return reply(`Üzgünüm, girdiğiniz sipariş numarası yanlış. Sipariş numaranızda harfler değil, yalnızca sayılar vardır.`)
 
-	var result = await getJson(`https://www.yurticikargo.com/service/shipmentstracking?id=${encodeURIComponent(q)}&language=tr`)
+	setTimeout(function() {
+		reply('Bir süredir sizden yanıt alamadığım için görüşmemizi sonlandırıyorum. Dilediğiniz zaman bize bu numaradan tekrar ulaşabilirsiniz.')
+	}, 180000);
 	
+	var result = await getJson(`https://www.yurticikargo.com/service/shipmentstracking?id=${encodeURIComponent(q)}&language=tr`)
+	reply(`Sipariş numaranız ile siparişinizi sorguluyorum ⏳`)
 	await conn.sendMessage(from, {text: `*📦 Kargo Gönderi Takibi 📦*`+`\n\nTeslim tarihi : ${result.DeliveryDate}\n\nSipariş durumu : ${result.ShipmentStatus}\n\nTeslimat birimi tel : ${result.DeliveryUnitTel}\n\nKalkış birimi : ${result.DepartureUnitName}\n\nKalkış şehir : ${result.DepartureCityName}\n\nKalkış ilçe : ${result.DepartureCountyName}\n\nGönderici : ${result.Sender}\n\nTeslimat birimi : ${result.DeliveryUnitName}\n\nTeslimat şehir : ${result.DeliveryCityName}\n\nTeslimat ilçe: ${result.DeliveryCountyName}\n\nAlıcı : ${result.DeliveredTo}`} , {quoted: mek})
-	}
+	
+	let buttons = [
+		{buttonId: prefix + 'menu', buttonText: {displayText: '✔️ Evet'}, type: 1},
+		{buttonId: prefix + 'thaaaaaaaanks', buttonText: {displayText: '❌ Hayır'}, type: 1},
+
+	  ]
+	  
+	  let buttonMessage = {
+		  text: "Size yardımcı olmamı istediğiniz farklı bir konu var mı😇 ?  ",
+		  footer: 'UPO MARKT',
+		  buttons: buttons,
+		  headerType: 1
+	  }
+
+	  await conn.sendMessage(from, buttonMessage)
+	  
+
+}
 
 break
 
@@ -478,7 +504,7 @@ let listMessage = {
   text: "💸 Online ödeme\n🚛 1-14 iş gününde teslimat\n📦 Temiz kodlama",
   footer: "",
   title: " 🧑‍💻 ᴜᴘᴏ ᴍᴀʀᴋᴛ | ʏᴀᴢɪʟɪᴍ  🧑‍💻",
-  buttonText: "🛒 Yazılım Listesi 🛒",
+  buttonText: "🛒 Lütfen seçiniz",
   sections
 }
 
