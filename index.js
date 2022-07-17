@@ -352,6 +352,26 @@ case "konum": {
 		{ location: { degreesLatitude: 41.0322806231775,   degreesLongitude: 29.028546991391305 } }
 	)
 	
+
+	setTimeout(function() {
+
+		let buttons = [
+			{buttonId: prefix + 'menu', buttonText: {displayText: '✔️ Evet'}, type: 1},
+			{buttonId: prefix + 'thaaaaaaaanks', buttonText: {displayText: '❌ Hayır'}, type: 1},
+	
+		  ]
+		  
+		  let buttonMessage = {
+			  text: "Size yardımcı olmamı istediğiniz farklı bir konu var mı ?  ",
+			  footer: 'UPO MARKT',
+			  buttons: buttons,
+			  headerType: 1
+		  }
+	
+		 conn.sendMessage(from, buttonMessage)
+			  
+		 }, 3000);
+		 
 }
 break
 
@@ -516,13 +536,13 @@ case 'yurtici':{
 	
 	var result = await getJson(`https://www.yurticikargo.com/service/shipmentstracking?id=${encodeURIComponent(q)}&language=tr`)
 
-	reply(`Sipariş numaranız ile siparişinizi sorguluyorum ⏳`)
+	reply(`Sipariş numaranız ile siparişinizi sorguluyorum⏳`)
 
 	setTimeout(function() {
 
 	  conn.sendMessage(from, {text: `*📦 Kargo Gönderi Takibi 📦*`+`\n\nTeslim tarihi : ${result.DeliveryDate}\n\nSipariş durumu : ${result.ShipmentStatus}\n\nTeslimat birimi tel : ${result.DeliveryUnitTel}\n\nKalkış birimi : ${result.DepartureUnitName}\n\nKalkış şehir : ${result.DepartureCityName}\n\nKalkış ilçe : ${result.DepartureCountyName}\n\nGönderici : ${result.Sender}\n\nTeslimat birimi : ${result.DeliveryUnitName}\n\nTeslimat şehir : ${result.DeliveryCityName}\n\nTeslimat ilçe: ${result.DeliveryCountyName}\n\nAlıcı : ${result.DeliveredTo}`} , {quoted: mek})
 		
-	   }, 3000);
+	   }, 4000);
   
 	setTimeout(function() {
 
