@@ -237,12 +237,11 @@ module.exports = async(conn, mek, store) => {
 				  ]
 				  
 				  let buttonMessage = {
-					  text: "Sipariş numaranız ile sipariş durumunuzu sorgulamak ister misiniz😇 ?  ",
+					  text: "Yurtiçi kargo kayıtlı sipariş numaranız ile sipariş durumunuzu sorgulamak ister misiniz ?  ",
 					  footer: 'UPO MARKT',
 					  buttons: buttons,
 					  headerType: 1
 				  }
-				  reply(`Yurtiçi kargo kayıtlı siparişlerinizi sorgulama yapabilirsiniz`)
 				  await conn.sendMessage(from, buttonMessage)
 			}
 
@@ -253,7 +252,7 @@ module.exports = async(conn, mek, store) => {
 
 
 case 'eveeeeeeeeeeeeeeeeeeeeeet' :{
-	reply(`Sorgulamak istediğiniz sipariş numarasını ile yazabilir misiniz?\n\n*ÖRNEK*\nyurtici 1234567890`)
+	reply(`Sorgulamak istediğiniz sipariş numarasını yazabilir misiniz?\n\n*ÖRNEK*\nyurtici 1234567890`)
 }
 break
 
@@ -278,6 +277,11 @@ break
 
 case 'merhaba': {
 
+	setTimeout(function() {
+		reply('Bir süredir sizden yanıt alamadığım için görüşmemizi sonlandırıyorum. Dilediğiniz zaman bize bu numaradan tekrar ulaşabilirsiniz.')
+	}, 600000);
+
+	
 	reply(`İyi günler *${pushname}*, ben Dijital Asistanınız ${betaname} 🤗`)
 
 	let buttonsx= [
@@ -388,6 +392,27 @@ const c = x['Bu Hafta']
 for (let i = 0; i < c.length; i++) {
 await conn.sendMessage(from, {image: {url: c[i]}}, {quoted: mek})
 }
+
+
+setTimeout(function() {
+
+	let buttons = [
+		{buttonId: prefix + 'menu', buttonText: {displayText: '✔️ Evet'}, type: 1},
+		{buttonId: prefix + 'thaaaaaaaanks', buttonText: {displayText: '❌ Hayır'}, type: 1},
+
+	  ]
+	  
+	  let buttonMessage = {
+		  text: "Size yardımcı olmamı istediğiniz farklı bir konu var mı ?  ",
+		  footer: 'UPO MARKT',
+		  buttons: buttons,
+		  headerType: 1
+	  }
+
+	 conn.sendMessage(from, buttonMessage)
+		  
+	 }, 3000);
+
 }
 break
 
@@ -398,6 +423,26 @@ case "gelecekhafta" :{
 	for (let i = 0; i < c.length; i++) {
 	await conn.sendMessage(from, {image: {url: c[i]}}, {quoted: mek})
 	}
+
+	setTimeout(function() {
+
+		let buttons = [
+			{buttonId: prefix + 'menu', buttonText: {displayText: '✔️ Evet'}, type: 1},
+			{buttonId: prefix + 'thaaaaaaaanks', buttonText: {displayText: '❌ Hayır'}, type: 1},
+	
+		  ]
+		  
+		  let buttonMessage = {
+			  text: "Size yardımcı olmamı istediğiniz farklı bir konu var mı ?  ",
+			  footer: 'UPO MARKT',
+			  buttons: buttons,
+			  headerType: 1
+		  }
+	
+		 conn.sendMessage(from, buttonMessage)
+			  
+		 }, 3000);
+
 	}
 break
 
@@ -408,6 +453,25 @@ case "haftaninyildizlari" :{
 	for (let i = 0; i < c.length; i++) {
 	await conn.sendMessage(from, {image: {url: c[i]}}, {quoted: mek})
 	}
+
+	setTimeout(function() {
+
+		let buttons = [
+			{buttonId: prefix + 'menu', buttonText: {displayText: '✔️ Evet'}, type: 1},
+			{buttonId: prefix + 'thaaaaaaaanks', buttonText: {displayText: '❌ Hayır'}, type: 1},
+	
+		  ]
+		  
+		  let buttonMessage = {
+			  text: "Size yardımcı olmamı istediğiniz farklı bir konu var mı ?  ",
+			  footer: 'UPO MARKT',
+			  buttons: buttons,
+			  headerType: 1
+		  }
+	
+		 conn.sendMessage(from, buttonMessage)
+			  
+		 }, 3000);
 	}
 
 break
@@ -441,7 +505,7 @@ case 'siparis':
 	break
 
 case 'thaaaaaaaanks' :{
-	reply(`${pushname} Size destek olabilmek çok keyifliydi. Biz hep buradayız, dilediğiniz zaman tekrar yazabilirsiniz 😊`)
+	reply(`${pushname} size destek olabilmek çok keyifliydi. Biz hep buradayız, dilediğiniz zaman tekrar yazabilirsiniz 😊`)
 }
 break
 
@@ -449,29 +513,36 @@ case 'yurtici':{
 
 	if(!Number(q))return reply(`Üzgünüm, girdiğiniz sipariş numarası yanlış. Sipariş numaranızda harfler değil, yalnızca sayılar vardır.`)
 
-	setTimeout(function() {
-		reply('Bir süredir sizden yanıt alamadığım için görüşmemizi sonlandırıyorum. Dilediğiniz zaman bize bu numaradan tekrar ulaşabilirsiniz.')
-	}, 180000);
 	
 	var result = await getJson(`https://www.yurticikargo.com/service/shipmentstracking?id=${encodeURIComponent(q)}&language=tr`)
+
 	reply(`Sipariş numaranız ile siparişinizi sorguluyorum ⏳`)
-	await conn.sendMessage(from, {text: `*📦 Kargo Gönderi Takibi 📦*`+`\n\nTeslim tarihi : ${result.DeliveryDate}\n\nSipariş durumu : ${result.ShipmentStatus}\n\nTeslimat birimi tel : ${result.DeliveryUnitTel}\n\nKalkış birimi : ${result.DepartureUnitName}\n\nKalkış şehir : ${result.DepartureCityName}\n\nKalkış ilçe : ${result.DepartureCountyName}\n\nGönderici : ${result.Sender}\n\nTeslimat birimi : ${result.DeliveryUnitName}\n\nTeslimat şehir : ${result.DeliveryCityName}\n\nTeslimat ilçe: ${result.DeliveryCountyName}\n\nAlıcı : ${result.DeliveredTo}`} , {quoted: mek})
+
+	setTimeout(function() {
+
+	  conn.sendMessage(from, {text: `*📦 Kargo Gönderi Takibi 📦*`+`\n\nTeslim tarihi : ${result.DeliveryDate}\n\nSipariş durumu : ${result.ShipmentStatus}\n\nTeslimat birimi tel : ${result.DeliveryUnitTel}\n\nKalkış birimi : ${result.DepartureUnitName}\n\nKalkış şehir : ${result.DepartureCityName}\n\nKalkış ilçe : ${result.DepartureCountyName}\n\nGönderici : ${result.Sender}\n\nTeslimat birimi : ${result.DeliveryUnitName}\n\nTeslimat şehir : ${result.DeliveryCityName}\n\nTeslimat ilçe: ${result.DeliveryCountyName}\n\nAlıcı : ${result.DeliveredTo}`} , {quoted: mek})
+		
+	   }, 3000);
+  
+	setTimeout(function() {
+
+		let buttons = [
+			{buttonId: prefix + 'menu', buttonText: {displayText: '✔️ Evet'}, type: 1},
+			{buttonId: prefix + 'thaaaaaaaanks', buttonText: {displayText: '❌ Hayır'}, type: 1},
 	
-	let buttons = [
-		{buttonId: prefix + 'menu', buttonText: {displayText: '✔️ Evet'}, type: 1},
-		{buttonId: prefix + 'thaaaaaaaanks', buttonText: {displayText: '❌ Hayır'}, type: 1},
+		  ]
+		  
+		  let buttonnMessage = {
+			  text: "Size yardımcı olmamı istediğiniz farklı bir konu var mı ?  ",
+			  footer: 'UPO MARKT',
+			  buttons: buttons,
+			  headerType: 1
+		  }
+		  
+	 conn.sendMessage(from, buttonnMessage)
 
-	  ]
-	  
-	  let buttonMessage = {
-		  text: "Size yardımcı olmamı istediğiniz farklı bir konu var mı😇 ?  ",
-		  footer: 'UPO MARKT',
-		  buttons: buttons,
-		  headerType: 1
-	  }
+	}, 6000);
 
-	  await conn.sendMessage(from, buttonMessage)
-	  
 
 }
 
@@ -485,6 +556,7 @@ break
 
 
 case "menu":
+
 let sections = [
     {
 	rows: [
