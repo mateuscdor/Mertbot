@@ -523,7 +523,7 @@ break
 	
 
 case "buhafta1" :{
-	const x = await getJson(`https://github.com/codermert/image-name-changer/blob/main/bim.json`)
+	const x = await getJson(`https://raw.githubusercontent.com/codermert/image-name-changer/main/bim.json`)
 	const c = x['Bu Hafta']
 	for (let i = 0; i < c.length; i++) {
 	await conn.sendMessage(from, {image: {url: c[i]}}, {quoted: mek})
@@ -554,7 +554,7 @@ case "buhafta1" :{
 	
 	
 	case "gelecekhafta1" :{
-		const x = await getJson(`https://github.com/codermert/image-name-changer/blob/main/bim.json`)
+		const x = await getJson(`https://raw.githubusercontent.com/codermert/image-name-changer/main/bim.json`)
 		const c = x['Gelecek Hafta']
 		for (let i = 0; i < c.length; i++) {
 		await conn.sendMessage(from, {image: {url: c[i]}}, {quoted: mek})
