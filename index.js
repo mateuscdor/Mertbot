@@ -245,6 +245,31 @@ module.exports = async(conn, mek, store) => {
 				  await conn.sendMessage(from, buttonMessage)
 			}
 
+
+			if (list.includes(`i`)){
+				let reactionMessage = {
+					react: {
+						text: "🔍",
+						key: mek.key
+					}
+				}
+			
+				let buttons= [
+					{buttonId: prefix + 'buhafta1', buttonText: {displayText: 'Bu Hafta'}, type: 1},
+					{buttonId: prefix + 'gelecekhafta1', buttonText: {displayText: 'Gelecek Hafta'}, type: 1},
+				  ]
+				let buttonMessages = {
+					image: {url: 'https://www.bim.com.tr/templates/images/bim-logo-single.png'},
+					caption: "*BİM AFİŞLER*",
+					footer: 'UPO MARKT | 0414 606 04 45',
+					buttons: buttons,
+					headerType: 4
+				}
+			
+				await conn.sendMessage(from, reactionMessage)
+				await conn.sendMessage(from, buttonMessages)
+		}
+
 			}
 
 			switch (command) {
@@ -497,6 +522,67 @@ case "haftaninyildizlari" :{
 break
 	
 
+case "buhafta1" :{
+	const x = await getJson(`https://github.com/codermert/image-name-changer/blob/main/bim.json`)
+	const c = x['Bu Hafta']
+	for (let i = 0; i < c.length; i++) {
+	await conn.sendMessage(from, {image: {url: c[i]}}, {quoted: mek})
+	}
+	
+	
+	setTimeout(function() {
+	
+		let buttons = [
+			{buttonId: prefix + 'menu', buttonText: {displayText: '✔️ Evet'}, type: 1},
+			{buttonId: prefix + 'thaaaaaaaanks', buttonText: {displayText: '❌ Hayır'}, type: 1},
+	
+		  ]
+		  
+		  let buttonMessage = {
+			  text: "Size yardımcı olmamı istediğiniz farklı bir konu var mı ?  ",
+			  footer: 'UPO MARKT',
+			  buttons: buttons,
+			  headerType: 1
+		  }
+	
+		 conn.sendMessage(from, buttonMessage)
+			  
+		 }, 3000);
+	
+	}
+	break
+	
+	
+	case "gelecekhafta1" :{
+		const x = await getJson(`https://github.com/codermert/image-name-changer/blob/main/bim.json`)
+		const c = x['Gelecek Hafta']
+		for (let i = 0; i < c.length; i++) {
+		await conn.sendMessage(from, {image: {url: c[i]}}, {quoted: mek})
+		}
+	
+		setTimeout(function() {
+	
+			let buttons = [
+				{buttonId: prefix + 'menu', buttonText: {displayText: '✔️ Evet'}, type: 1},
+				{buttonId: prefix + 'thaaaaaaaanks', buttonText: {displayText: '❌ Hayır'}, type: 1},
+		
+			  ]
+			  
+			  let buttonMessage = {
+				  text: "Size yardımcı olmamı istediğiniz farklı bir konu var mı ?  ",
+				  footer: 'UPO MARKT',
+				  buttons: buttons,
+				  headerType: 1
+			  }
+		
+			 conn.sendMessage(from, buttonMessage)
+				  
+			 }, 3000);
+	
+		}
+	break
+	
+
 
 
 case "gelistirici":
@@ -586,6 +672,7 @@ let sections = [
 	    {title: "Sosyal Medya Hizmeti", rowId: `${prefix}d`, description: ""},
 	    {title: "Hizmetlerimiz", rowId: `${prefix}f`, description: ""},
 		{title: "A101 KATALOG", rowId: `${prefix}g`, description: ""},
+		{title: "BİM KATALOG", rowId: `${prefix}i`, description: ""},
 		{title: "Yurtiçi Kargo Takip", rowId: `${prefix}h`, description: ""},
 		
 	]
