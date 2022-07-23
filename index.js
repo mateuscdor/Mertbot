@@ -7,6 +7,7 @@ const {
 const fs = require('fs')
 const P = require('pino')
 const axios = require('axios')
+const igdl = require('instagram-url-downloader')
 
 const prefix = ''
 const ownerNumber = ['905413616548']
