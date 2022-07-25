@@ -261,7 +261,7 @@ module.exports = async(conn, mek, store) => {
 				  ]
 				let buttonMessages = {
 					image: {url: 'https://igram.io/static/img/instagram-video.jpg'},
-					caption: "*Instagram Downloader*\nReels & IG videolarını istediğiniz amaç için indirebilmeniz için oluşturulmuştur.\n\nig yazarak  indirin",
+					caption: "*Instagram Downloader*",
 					footer: 'UPO MARKT | 0414 606 04 45',
 					buttons: buttons,
 					headerType: 4
