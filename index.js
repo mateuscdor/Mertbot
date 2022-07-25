@@ -256,6 +256,8 @@ module.exports = async(conn, mek, store) => {
 			
 				let buttons= [
 					{buttonId: prefix + 'ig', buttonText: {displayText: 'İNDİR'}, type: 1},
+					{buttonId: prefix + 'menu', buttonText: {displayText: 'MENÜ'}, type: 1},
+
 				  ]
 				let buttonMessages = {
 					image: {url: 'https://igram.io/static/img/instagram-video.jpg'},
@@ -596,18 +598,6 @@ case 'yurtici':{
 break
 
 
-case "testt" : {
-
- var result = await getJson('https://raw.githubusercontent.com/codermert/image-name-changer/main/random.json')
-
-var result2 = result.data[Math.floor(Math.random() * result.data.length)]
-
-conn.sendMessage(from, {text: {url: `${result2.source}`}})
-
-}
- break
-
-
 
 
 case "menu":
@@ -631,7 +621,7 @@ let sections = [
 let listMessage = {
   text: "💸 Online ödeme\n🚛 1-14 iş gününde teslimat\n📦 Temiz kodlama",
   footer: "",
-  title: " 🧑‍💻 ᴜᴘᴏ ᴍᴀʀᴋᴛ | ʏᴀᴢɪʟɪᴍ  🧑‍💻",
+  title: "ᴜᴘᴏ ᴍᴀʀᴋᴛ | ʏᴀᴢɪʟɪᴍ",
   buttonText: "🛒 Lütfen seçiniz",
   sections
 }
