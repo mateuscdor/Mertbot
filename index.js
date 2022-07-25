@@ -7,7 +7,6 @@ const {
 const fs = require('fs')
 const P = require('pino')
 const axios = require('axios')
-const igdl = require('instagram-url-downloader')
 
 const prefix = ''
 const ownerNumber = ['905413616548']
@@ -256,12 +255,11 @@ module.exports = async(conn, mek, store) => {
 				}
 			
 				let buttons= [
-					{buttonId: prefix + 'buhafta1', buttonText: {displayText: 'Bu Hafta'}, type: 1},
-					{buttonId: prefix + 'gelecekhafta1', buttonText: {displayText: 'Gelecek Hafta'}, type: 1},
+					{buttonId: prefix + 'ig', buttonText: {displayText: 'İNDİR'}, type: 1},
 				  ]
 				let buttonMessages = {
-					image: {url: 'https://www.bim.com.tr/templates/images/bim-logo-single.png'},
-					caption: "*BİM AFİŞLER*",
+					image: {url: 'https://igram.io/static/img/instagram-video.jpg'},
+					caption: "*Instagram Downloader*\nReels & IG videolarını istediğiniz amaç için indirebilmeniz için oluşturulmuştur.\n\nig yazarak  indirin",
 					footer: 'UPO MARKT | 0414 606 04 45',
 					buttons: buttons,
 					headerType: 4
@@ -301,7 +299,7 @@ case 'hayrrrrrrrrrrr' :{
 }
 break
 
-case 'merhaba': {
+case 'merhaba': case 'selam': case 'sa': case 'kral': case 'başkan': case 'reis': {
 
 	setTimeout(function() {
 		reply('Bir süredir sizden yanıt alamadığım için görüşmemizi sonlandırıyorum. Dilediğiniz zaman bize bu numaradan tekrar ulaşabilirsiniz.')
@@ -338,36 +336,39 @@ await conn.sendMessage(from, buttonMessagessssss)
 break
 
 
-case 'selam':
+case "ig" :{
+
+	var result = await getJson(`https://api.zeeoneofc.xyz/api/downloader/instagram-photo?apikey=6qUfsRNg&url=${encodeURIComponent(q)}`)
+
+	reply(`Videonuzu indiriyorum⏳`)
+
+	setTimeout(function() {
+
+		conn.sendMessage(from, {video: {url: result.result.medias[0].url}, caption:'Coder Mert'}, {quoted: mek})
+		
+	   }, 4000);
+  
+	setTimeout(function() {
+
+		let buttons = [
+			{buttonId: prefix + 'menu', buttonText: {displayText: '✔️ Evet'}, type: 1},
+			{buttonId: prefix + 'thaaaaaaaanks', buttonText: {displayText: '❌ Hayır'}, type: 1},
 	
-	reply(`İyi günler *${pushname}*, ben Dijital Asistanınız ${betaname} 🤗`)
+		  ]
+		  
+		  let buttonnMessage = {
+			  text: "Size yardımcı olmamı istediğiniz farklı bir konu var mı ?  ",
+			  footer: 'UPO MARKT',
+			  buttons: buttons,
+			  headerType: 1
+		  }
+		  
+	 conn.sendMessage(from, buttonnMessage)
 
-	let buttonsxx= [
-		{buttonId: prefix + 'menu', buttonText: {displayText: '🎮 YAZILIM MENÜ'}, type: 1},
-		{buttonId: prefix + 'konum', buttonText: {displayText: '📍 KONUM'}, type: 1},
-		{buttonId: prefix + 'ooooops', buttonText: {displayText: '🍟 A101 KATALOG'}, type: 1},
-	  ]
-	let buttonMessagesss = {
-		image: {url: 'https://i.hizliresim.com/tw47gsj.jpg'},
-		caption: "UPO MARKT'a hoş geldiniz. Size daha hızlı yardımcı olabilmem için istediğiniz yazılım modeline ihtiyacım var. Tüm hizmetleri listeliyorum...",
-		footer: 'UPO MARKT | 0414 606 04 45',
-		buttons: buttonsxx,
-		headerType: 4
-	}
+	}, 10000);
 
 
-let reactionMessage1x = {
-	react: {
-		text: "💫",
-		key: mek.key
-	}
 }
-
-
-await conn.sendMessage(from, reactionMessage1x)
-await conn.sendMessage(from, buttonMessagesss)
-
-
 break
 
 
@@ -523,67 +524,6 @@ case "haftaninyildizlari" :{
 break
 	
 
-case "buhafta1" :{
-	const x = await getJson(`https://raw.githubusercontent.com/codermert/image-name-changer/main/bim.json`)
-	const c = x['Bu Hafta']
-	for (let i = 0; i < c.length; i++) {
-	await conn.sendMessage(from, {image: {url: c[i]}}, {quoted: mek})
-	}
-	
-	
-	setTimeout(function() {
-	
-		let buttons = [
-			{buttonId: prefix + 'menu', buttonText: {displayText: '✔️ Evet'}, type: 1},
-			{buttonId: prefix + 'thaaaaaaaanks', buttonText: {displayText: '❌ Hayır'}, type: 1},
-	
-		  ]
-		  
-		  let buttonMessage = {
-			  text: "Size yardımcı olmamı istediğiniz farklı bir konu var mı ?  ",
-			  footer: 'UPO MARKT',
-			  buttons: buttons,
-			  headerType: 1
-		  }
-	
-		 conn.sendMessage(from, buttonMessage)
-			  
-		 }, 3000);
-	
-	}
-	break
-	
-	
-	case "gelecekhafta1" :{
-		const x = await getJson(`https://raw.githubusercontent.com/codermert/image-name-changer/main/bim.json`)
-		const c = x['Gelecek Hafta']
-		for (let i = 0; i < c.length; i++) {
-		await conn.sendMessage(from, {image: {url: c[i]}}, {quoted: mek})
-		}
-	
-		setTimeout(function() {
-	
-			let buttons = [
-				{buttonId: prefix + 'menu', buttonText: {displayText: '✔️ Evet'}, type: 1},
-				{buttonId: prefix + 'thaaaaaaaanks', buttonText: {displayText: '❌ Hayır'}, type: 1},
-		
-			  ]
-			  
-			  let buttonMessage = {
-				  text: "Size yardımcı olmamı istediğiniz farklı bir konu var mı ?  ",
-				  footer: 'UPO MARKT',
-				  buttons: buttons,
-				  headerType: 1
-			  }
-		
-			 conn.sendMessage(from, buttonMessage)
-				  
-			 }, 3000);
-	
-		}
-	break
-	
-
 
 
 case "gelistirici":
@@ -656,8 +596,16 @@ case 'yurtici':{
 break
 
 
+case "testt" : {
 
+ var result = await getJson('https://raw.githubusercontent.com/codermert/image-name-changer/main/random.json')
 
+var result2 = result.data[Math.floor(Math.random() * result.data.length)]
+
+conn.sendMessage(from, {text: {url: `${result2.source}`}})
+
+}
+ break
 
 
 
@@ -673,7 +621,7 @@ let sections = [
 	    {title: "Sosyal Medya Hizmeti", rowId: `${prefix}d`, description: ""},
 	    {title: "Hizmetlerimiz", rowId: `${prefix}f`, description: ""},
 		{title: "A101 KATALOG", rowId: `${prefix}g`, description: ""},
-		{title: "BİM KATALOG", rowId: `${prefix}i`, description: ""},
+		{title: "Instagram Downloader", rowId: `${prefix}i`, description: "Reels & Video"},
 		{title: "Yurtiçi Kargo Takip", rowId: `${prefix}h`, description: ""},
 		
 	]
