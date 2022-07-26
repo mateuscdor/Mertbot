@@ -36,6 +36,9 @@ module.exports = async(conn, mek, store) => {
 			const betaname = items[Math.floor(Math.random() * items.length)];
 			
  
+			var items1 = ['KvULvA6G', 'zltNUbam','pd4ITdZn', 'LKCUIOss', 'l6YGVBHN'];
+
+			const apifreeee = items1[Math.floor(Math.random() * items1.length)];
                         
 			const isMe = botNumber.includes(senderNumber)
 			const isOwner = ownerNumber.includes(senderNumber) || isMe
@@ -329,7 +332,7 @@ break
 
 case "ig" :{
 
-	var result = await getJson(`https://api.zeeoneofc.xyz/api/downloader/instagram-photo?apikey=6qUfsRNg&url=${encodeURIComponent(q)}`)
+	var result = await getJson(`https://api.zeeoneofc.xyz/api/downloader/instagram-photo?apikey=${apifreeee}&url=${encodeURIComponent(q)}`)
 
 	reply(`Videonuzu indiriyorum⏳`)
 
