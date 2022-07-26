@@ -338,28 +338,10 @@ case "ig" :{
 
 	setTimeout(function() {
 
-		conn.sendMessage(from, {video: {url: result.result.medias[0].url}, caption: "👤@"+result.result.user.username}, {quoted: mek})
+		conn.sendMessage(from, {video: {url: result.result.medias[0].url}, caption: '👤@'+result.result.user.username}, {quoted: mek})
 		
 	   }, 4000);
   
-	setTimeout(function() {
-
-		let buttons = [
-			{buttonId: prefix + 'menu', buttonText: {displayText: '✔️ Evet'}, type: 1},
-			{buttonId: prefix + 'thaaaaaaaanks', buttonText: {displayText: '❌ Hayır'}, type: 1},
-	
-		  ]
-		  
-		  let buttonnMessage = {
-			  text: "Size yardımcı olmamı istediğiniz farklı bir konu var mı ?  ",
-			  footer: 'UPO MARKT',
-			  buttons: buttons,
-			  headerType: 1
-		  }
-		  
-	 conn.sendMessage(from, buttonnMessage)
-
-	}, 10000);
 
 
 }
