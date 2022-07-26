@@ -338,7 +338,7 @@ case "ig" :{
 
 	setTimeout(function() {
 
-		conn.sendMessage(from, {video: {url: result.result.medias[0].url}, caption: result.result.user.username}, {quoted: mek})
+		conn.sendMessage(from, {video: {url: result.result.medias[0].url}, caption: "👤@"+result.result.user.username}, {quoted: mek})
 		
 	   }, 4000);
   
