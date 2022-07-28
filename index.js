@@ -263,6 +263,22 @@ module.exports = async(conn, mek, store) => {
 				
 		}
 
+
+		if (list.includes(`j`)){
+			let reactionMessage = {
+				react: {
+					text: "🔍",
+					key: mek.key
+				}
+			}
+		
+			reply('Aramak için:\n\nÖRNEK:\n===>film filmadı')
+			
+			await conn.sendMessage(from, reactionMessage)
+			
+	}
+
+
 			}
 
 			switch (command) {
@@ -330,6 +346,26 @@ await conn.sendMessage(from, buttonMessagessssss)
 break
 
 
+case "film" :{
+
+	var result = await getJson(` https://www.omdbapi.com/?apikey=adeab3dc&t=${encodeURIComponent(q)}`)
+
+
+	reply(`Filminizi getiriyorum⏳`)
+
+	setTimeout(function() {
+
+		conn.sendMessage(from, {image: {url: result.Poster}, caption: '🎥 '+result.Title +'\n\n🕜 '+result.Year +'\n\n🌐 '+result.Language +'\n\n👥 '+result.Actors +'\n\n⭐ '+result.Ratings[0].Value +'\n\n📅 '+result.totalSeasons +' sezon'}, {quoted: mek})
+
+	   }, 4000);
+  
+
+
+}
+break
+
+
+
 case "ig" :{
 
 	var result = await getJson(`https://api.zeeoneofc.xyz/api/downloader/instagram-photo?apikey=${apifreeee}&url=${encodeURIComponent(q)}`)
@@ -346,6 +382,7 @@ case "ig" :{
 
 }
 break
+
 
 
 
@@ -579,6 +616,7 @@ case "menu":
 let sections = [
     {
 	rows: [
+		{title: "Film Ara", rowId: `${prefix}j`, description: "Tüm Film Veritabanı"},
 	    {title: "Android Mobil Uygulama", rowId: `${prefix}a`, description: ""},
 	    {title: "Sosyal Medya Tasarım", rowId: `${prefix}b`, description: ""},
 	    {title: "Instagram Account", rowId: `${prefix}c`, description: ""},
