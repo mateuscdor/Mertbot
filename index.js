@@ -284,7 +284,6 @@ module.exports = async(conn, mek, store) => {
 				}
 			}
 		
-			reply('Aramak için:\n\nÖRNEK:\n===>film filmadı')
 
 			let templateButtons = [
 				{index: 1, urlButton: {displayText: 'Komudu kopyala', url: 'https://www.whatsapp.com/otp/copy/film'}},	
