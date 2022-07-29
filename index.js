@@ -257,9 +257,21 @@ module.exports = async(conn, mek, store) => {
 					}
 				}
 			
-				reply('Instagramdan video indirmek için bu komudu kullanın:\n\nÖRNEK:\nig https://www.instagram.com/reel/XXX/')
+
+				let templateButtons = [
+					{index: 1, urlButton: {displayText: 'Komudu kopyala', url: 'https://www.whatsapp.com/otp/copy/ig'}},	
+					
+				]
 				
+				let templateMessage = {
+					text: "Instagramdan video indirmek için bu komudu kullanın:\n\nÖRNEK:\nig https://www.instagram.com/reel/XXX/",
+					footer: 'UPO MARKT | 0414 606 04 45',
+					templateButtons: templateButtons
+				}
 				await conn.sendMessage(from, reactionMessage)
+				await conn.sendMessage(from, templateMessage)
+				
+				
 				
 		}
 
@@ -273,8 +285,20 @@ module.exports = async(conn, mek, store) => {
 			}
 		
 			reply('Aramak için:\n\nÖRNEK:\n===>film filmadı')
+
+			let templateButtons = [
+				{index: 1, urlButton: {displayText: 'Komudu kopyala', url: 'https://www.whatsapp.com/otp/copy/film'}},	
+				
+			]
 			
+			let templateMessage = {
+				text: "Aramak için:\n\nÖRNEK:\n===>film filmadı",
+				footer: 'UPO MARKT | 0414 606 04 45',
+				templateButtons: templateButtons
+			}
 			await conn.sendMessage(from, reactionMessage)
+			await conn.sendMessage(from, templateMessage)
+			
 			
 	}
 
