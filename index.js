@@ -216,7 +216,7 @@ module.exports = async(conn, mek, store) => {
 					let buttons= [
 						{buttonId: prefix + 'buhafta', buttonText: {displayText: 'Bu Hafta'}, type: 1},
 						{buttonId: prefix + 'gelecekhafta', buttonText: {displayText: 'Gelecek Hafta'}, type: 1},
-						{buttonId: prefix + 'haftaninyildizlari', buttonText: {displayText: 'Haftanın Yıldızları'}, type: 1},
+						{buttonId: prefix + 'haftaninyildizlari', buttonText: {displayText: 'Büyük olduğu için UCUZ'}, type: 1},
 					  ]
 					let buttonMessages = {
 						image: {url: 'https://ayb.akinoncdn.com/static_omnishop/ayb775/assets/img/logo%40a101-2x.png'},
@@ -452,7 +452,7 @@ case "ooooops" : {
 	let buttons= [
 		{buttonId: prefix + 'buhafta', buttonText: {displayText: 'Bu Hafta'}, type: 1},
 		{buttonId: prefix + 'gelecekhafta', buttonText: {displayText: 'Gelecek Hafta'}, type: 1},
-		{buttonId: prefix + 'haftaninyildizlari', buttonText: {displayText: 'Haftanın Yıldızları'}, type: 1},
+		{buttonId: prefix + 'haftaninyildizlari', buttonText: {displayText: 'Büyük olduğu için UCUZ'}, type: 1},
 	  ]
 	let buttonMessages = {
 		image: {url: 'https://ayb.akinoncdn.com/static_omnishop/ayb775/assets/img/logo%40a101-2x.png'},
@@ -532,7 +532,7 @@ break
 
 case "haftaninyildizlari" :{
 	const x = await getJson(`https://raw.githubusercontent.com/keyiflerolsun/A101AktuelRobot/main/A101.json`)
-	const c = x['Haftanın Yıldızları']
+	const c = x['Büyük olduğu için UCUZ']
 	for (let i = 0; i < c.length; i++) {
 	await conn.sendMessage(from, {image: {url: c[i]}}, {quoted: mek})
 	}
