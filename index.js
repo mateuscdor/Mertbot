@@ -36,7 +36,7 @@ module.exports = async(conn, mek, store) => {
 			const betaname = items[Math.floor(Math.random() * items.length)];
 			
  
-			var items1 = ['KvULvA6G', 'zltNUbam','pd4ITdZn', 'LKCUIOss', 'l6YGVBHN'];
+			var items1 = ['cc1c0e81c8881ddc9f08d3b5', 'e8c920948cc9d08193177b78','5bc7f093306ec2ae28a151c8', 'b336356df297fe9de4d88b54', '1290a15e9e667d3363db05bf', 'fa8e7c440591c02959709234', 'e793f9b1c40e884ebc5c335a', '12a1aa7c1bba272cc5e31ce8', 'dcbf342a156abcab3543eac8', '74e1d121e8576b9f01acfe36', 'd59bc072f0bcbce2c525a9be', '0b789b2cd1f4e496f7b0c30d', 'bfdf39cd20e54a832bf05650'];
 
 			const apifreeee = items1[Math.floor(Math.random() * items1.length)];
                         
@@ -264,7 +264,7 @@ module.exports = async(conn, mek, store) => {
 				]
 				
 				let templateMessage = {
-					text: "Instagramdan video indirmek için bu komudu kullanın:\n\nÖRNEK:\nig https://www.instagram.com/reel/XXX/",
+					text: "Instagramdan video indirmek için bu komudu kullanın:\n\nÖRNEK:\nig url",
 					footer: 'UPO MARKT | 0414 606 04 45',
 					templateButtons: templateButtons
 				}
@@ -300,6 +300,57 @@ module.exports = async(conn, mek, store) => {
 			
 			
 	}
+
+
+	if (list.includes(`k`)){
+		let reactionMessage = {
+			react: {
+				text: "🔍",
+				key: mek.key
+			}
+		}
+	
+
+		let templateButtons = [
+			{index: 1, urlButton: {displayText: 'Komudu kopyala', url: 'https://www.whatsapp.com/otp/copy/spotify'}},	
+			
+		]
+		
+		let templateMessage = {
+			text: "Spotifydan müzik indirmek için:\n\nÖRNEK:\n===>spotify url",
+			footer: 'UPO MARKT | 0414 606 04 45',
+			templateButtons: templateButtons
+		}
+		await conn.sendMessage(from, reactionMessage)
+		await conn.sendMessage(from, templateMessage)
+		
+		
+}
+
+if (list.includes(`l`)){
+	let reactionMessage = {
+		react: {
+			text: "🔍",
+			key: mek.key
+		}
+	}
+
+
+	let templateButtons = [
+		{index: 1, urlButton: {displayText: 'Komudu kopyala', url: 'https://www.whatsapp.com/otp/copy/fb'}},	
+		
+	]
+	
+	let templateMessage = {
+		text: "Facebook'dan video indirmek için:\n\nÖRNEK:\n===>fb url",
+		footer: 'UPO MARKT | 0414 606 04 45',
+		templateButtons: templateButtons
+	}
+	await conn.sendMessage(from, reactionMessage)
+	await conn.sendMessage(from, templateMessage)
+	
+	
+}
 
 
 			}
@@ -389,23 +440,62 @@ break
 
 
 
+
 case "ig" :{
 
-	var result = await getJson(`https://api.zeeoneofc.xyz/api/downloader/instagram-photo?apikey=${apifreeee}&url=${encodeURIComponent(q)}`)
+
+	if(body.includes("instagram.com")){
+		
+		var result = await getJson(`https://api.lolhuman.xyz/api/instagram?apikey=${apifreeee}&url=${encodeURIComponent(q)}`)
 
 	reply(`Videonuzu indiriyorum⏳`)
 
 	setTimeout(function() {
 
-		conn.sendMessage(from, {video: {url: result.result.medias[0].url}, caption: '👤@'+result.result.user.username}, {quoted: mek})
+		conn.sendMessage(from, {video: {url: result.result}, caption: '👤Instagram'}, {quoted: mek})
 		
-	   }, 4000);
+	   }, 3000);
+
+		}
+
+
+}
+break
+
+
+case "fb" :{
+
+	var result = await getJson(`https://api.lolhuman.xyz/api/facebook?apikey=${apifreeee}&url=${encodeURIComponent(q)}`)
+
+	reply(`Videonuzu indiriyorum⏳`)
+
+	setTimeout(function() {
+
+		conn.sendMessage(from, {video: {url: result.result}, caption: '👤Facebook'}, {quoted: mek})
+		
+	   }, 3000);
   
 
 
 }
 break
 
+case "spotify" :{
+
+	var result = await getJson(`https://api.lolhuman.xyz/api/spotify?apikey=${apifreeee}&url=${encodeURIComponent(q)}`)
+
+	reply(`Müziğinizi indiriyorum⏳`)
+
+	setTimeout(function() {
+
+		conn.sendMessage(from, {image: {url: result.result.thumbnail}, caption: '🎧'+ result.result.title + '\n\n' + '👤' + result.result.artists + '\n\n' + result.result.link}, {quoted: mek})
+		
+	   }, 3000);
+  
+
+
+}
+break
 
 
 
@@ -639,14 +729,16 @@ case "menu":
 let sections = [
     {
 	rows: [
-		{title: "Film Ara", rowId: `${prefix}j`, description: "Tüm Film Veritabanı"},
+		{title: "Film Ara", rowId: `${prefix}j`, description: ""},
 	    {title: "Android Mobil Uygulama", rowId: `${prefix}a`, description: ""},
 	    {title: "Sosyal Medya Tasarım", rowId: `${prefix}b`, description: ""},
 	    {title: "Instagram Account", rowId: `${prefix}c`, description: ""},
 	    {title: "Sosyal Medya Hizmeti", rowId: `${prefix}d`, description: ""},
 	    {title: "Hizmetlerimiz", rowId: `${prefix}f`, description: ""},
 		{title: "A101 KATALOG", rowId: `${prefix}g`, description: ""},
-		{title: "Instagram Downloader", rowId: `${prefix}i`, description: "Reels & Video"},
+		{title: "Instagram Downloader", rowId: `${prefix}i`, description: ""},
+		{title: "Spotify Downloader", rowId: `${prefix}k`, description: ""},
+		{title: "Facebook Downloader", rowId: `${prefix}l`, description: ""},
 		{title: "Yurtiçi Kargo Takip", rowId: `${prefix}h`, description: ""},
 		
 	]
