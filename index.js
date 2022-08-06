@@ -353,6 +353,38 @@ if (list.includes(`l`)){
 }
 
 
+if (list.includes(`m`)){
+
+	var result = await getJson('https://raw.githubusercontent.com/codermert/image-name-changer/main/sample.json')
+
+	var result2 = result.veri[Math.floor(Math.random() * result.veri.length)]
+	
+	
+	
+	
+	
+	let buttons = [
+		{buttonId: prefix + 'ucuzbilet', buttonText: {displayText: '🔄 BİLET GETİR 🔄'}, type: 1},
+	
+	  ]
+	  
+	  let buttonMessage = {
+		  text: '🎫'+ result2.bilet + '\n\n' + '💰'+result2.fiyat + '\n\n' + '🔄'+result2.yon + '\n\n' + '📅'+result2.tarih + '\n\n' + '🌐'+result2.paylasim + '\n\n' + '🔗'+result2.link,
+		  footer: 'UPO MARKT',
+		  buttons: buttons,
+		  headerType: 1
+	  }
+	
+	
+	  setTimeout(function() {
+	
+		conn.sendMessage(from, buttonMessage)
+	
+	   }, 1000);
+	  
+}
+
+
 			}
 
 			switch (command) {
@@ -439,13 +471,45 @@ case "film" :{
 break
 
 
+case "ucuzbilet" :{
 
 
-case "ig" :{
+
+var result = await getJson('https://raw.githubusercontent.com/codermert/image-name-changer/main/sample.json')
+
+var result2 = result.veri[Math.floor(Math.random() * result.veri.length)]
 
 
-	if(body.includes("instagram.com")){
-		
+
+
+
+let buttons = [
+	{buttonId: prefix + 'ucuzbilet', buttonText: {displayText: '🔄 BİLET GETİR 🔄'}, type: 1},
+
+  ]
+  
+  let buttonMessage = {
+	  text: '🎫'+ result2.bilet + '\n\n' + '💰'+result2.fiyat + '\n\n' + '🔄'+result2.yon + '\n\n' + '📅'+result2.tarih + '\n\n' + '🌐'+result2.paylasim + '\n\n' + '🔗'+result2.link,
+	  footer: 'UPO MARKT',
+	  buttons: buttons,
+	  headerType: 1
+  }
+
+
+  setTimeout(function() {
+
+	conn.sendMessage(from, buttonMessage)
+
+   }, 1000);
+  
+
+}
+break
+
+
+
+case "ig" : case 'İg': {
+
 		var result = await getJson(`https://api.lolhuman.xyz/api/instagram?apikey=${apifreeee}&url=${encodeURIComponent(q)}`)
 
 	reply(`Videonuzu indiriyorum⏳`)
@@ -454,16 +518,13 @@ case "ig" :{
 
 		conn.sendMessage(from, {video: {url: result.result}, caption: '👤Instagram'}, {quoted: mek})
 		
-	   }, 3000);
-
-		}
-
+	   }, 2000);
 
 }
 break
 
 
-case "fb" :{
+case "fb" : case 'Fb':{
 
 	var result = await getJson(`https://api.lolhuman.xyz/api/facebook?apikey=${apifreeee}&url=${encodeURIComponent(q)}`)
 
@@ -480,7 +541,7 @@ case "fb" :{
 }
 break
 
-case "spotify" :{
+case "spotify" : case 'Spotify':{
 
 	var result = await getJson(`https://api.lolhuman.xyz/api/spotify?apikey=${apifreeee}&url=${encodeURIComponent(q)}`)
 
@@ -729,6 +790,7 @@ case "menu":
 let sections = [
     {
 	rows: [
+		{title: "Ucuz Uçak Biletleri", rowId: `${prefix}m`, description: "Son eklenen veriler"},
 		{title: "Film Ara", rowId: `${prefix}j`, description: ""},
 	    {title: "Android Mobil Uygulama", rowId: `${prefix}a`, description: ""},
 	    {title: "Sosyal Medya Tasarım", rowId: `${prefix}b`, description: ""},
