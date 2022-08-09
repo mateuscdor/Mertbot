@@ -512,7 +512,15 @@ case "ig" : case 'İg': {
 
 		var result = await getJson(`https://api.lolhuman.xyz/api/instagram?apikey=${apifreeee}&url=${encodeURIComponent(q)}`)
 
-	reply(`Videonuzu indiriyorum⏳`)
+		let reactionMessage4 = {
+			react: {
+				text: "🍿",
+				key: mek.key
+			}
+		}
+	
+		
+		await conn.sendMessage(from, reactionMessage4)
 
 	setTimeout(function() {
 
@@ -528,7 +536,15 @@ case "fb" : case 'Fb':{
 
 	var result = await getJson(`https://api.lolhuman.xyz/api/facebook?apikey=${apifreeee}&url=${encodeURIComponent(q)}`)
 
-	reply(`Videonuzu indiriyorum⏳`)
+	let reactionMessage4 = {
+		react: {
+			text: "🍿",
+			key: mek.key
+		}
+	}
+
+	
+	await conn.sendMessage(from, reactionMessage4)
 
 	setTimeout(function() {
 
@@ -545,7 +561,15 @@ case "spotify" : case 'Spotify':{
 
 	var result = await getJson(`https://api.lolhuman.xyz/api/spotify?apikey=${apifreeee}&url=${encodeURIComponent(q)}`)
 
-	reply(`Müziğinizi indiriyorum⏳`)
+	let reactionMessage4 = {
+		react: {
+			text: "🍿",
+			key: mek.key
+		}
+	}
+
+	
+	await conn.sendMessage(from, reactionMessage4)
 
 	setTimeout(function() {
 
