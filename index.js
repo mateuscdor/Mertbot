@@ -520,7 +520,7 @@ case "ig" : case 'İg': {
 		}
 	
 		
-		await conn.sendMessage(from, reactionMessage4)
+	 conn.sendMessage(from, reactionMessage4)
 
 	setTimeout(function() {
 
@@ -544,7 +544,7 @@ case "fb" : case 'Fb':{
 	}
 
 	
-	await conn.sendMessage(from, reactionMessage4)
+	 conn.sendMessage(from, reactionMessage4)
 
 	setTimeout(function() {
 
@@ -569,7 +569,7 @@ case "spotify" : case 'Spotify':{
 	}
 
 	
-	await conn.sendMessage(from, reactionMessage4)
+	 conn.sendMessage(from, reactionMessage4)
 
 	setTimeout(function() {
 
