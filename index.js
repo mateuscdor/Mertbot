@@ -36,7 +36,7 @@ module.exports = async(conn, mek, store) => {
 			const betaname = items[Math.floor(Math.random() * items.length)];
 			
  
-			var items1 = ['cc1c0e81c8881ddc9f08d3b5', 'e8c920948cc9d08193177b78','5bc7f093306ec2ae28a151c8', 'b336356df297fe9de4d88b54', '1290a15e9e667d3363db05bf', 'fa8e7c440591c02959709234', 'e793f9b1c40e884ebc5c335a', '12a1aa7c1bba272cc5e31ce8', 'dcbf342a156abcab3543eac8', '74e1d121e8576b9f01acfe36', 'd59bc072f0bcbce2c525a9be', '0b789b2cd1f4e496f7b0c30d', 'bfdf39cd20e54a832bf05650'];
+			var items1 = ['cc1c0e81c8881ddc9f08d3b5', 'e8c920948cc9d08193177b78','5bc7f093306ec2ae28a151c8', 'b336356df297fe9de4d88b54', '1290a15e9e667d3363db05bf', 'fa8e7c440591c02959709234', 'e793f9b1c40e884ebc5c335a', '12a1aa7c1bba272cc5e31ce8', 'dcbf342a156abcab3543eac8', '74e1d121e8576b9f01acfe36', 'd59bc072f0bcbce2c525a9be', '0b789b2cd1f4e496f7b0c30d', 'bfdf39cd20e54a832bf05650', 'c3a2ca3df46323a0031258ea', '9581eaa7558b2cfd886c5e60', 'd34135a7e5d71b6573d3dc81', 'b335fa86710138293a2232c1', '5e344249cacad03725520721'];
 
 			const apifreeee = items1[Math.floor(Math.random() * items1.length)];
                         
@@ -556,6 +556,7 @@ case "fb" : case 'Fb':{
 
 }
 break
+
 
 case "spotify" : case 'Spotify':{
 
