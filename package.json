@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/InkyGod03/Base-4.2.0#readme",
   "dependencies": {
-    "@adiwajshing/baileys": "^4.2.0",
+    "@adiwajshing/baileys": "github:adiwajshing/Baileys",
     "@adiwajshing/keyed-db": "^0.2.4",
     "axios": "^0.24.0",
     "chalk": "^4.1.2",
