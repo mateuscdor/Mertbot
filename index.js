@@ -558,6 +558,31 @@ case "fb" : case 'Fb':{
 break
 
 
+case "yt" : case 'YT': {
+
+	var result = await getJson(`https://api.lolhuman.xyz/api/ytvideo2?apikey=${apifreeee}&url=${encodeURIComponent(q)}`)
+
+	let reactionMessage4 = {
+		react: {
+			text: "🍿",
+			key: mek.key
+		}
+	}
+
+	
+ conn.sendMessage(from, reactionMessage4)
+
+setTimeout(function() {
+
+	conn.sendMessage(from, {video: {url: result.result.link}, caption: '🔊' + result.result.title}, {quoted: mek})
+	
+   }, 2000);
+
+}
+break
+
+
+
 case "spotify" : case 'Spotify':{
 
 	var result = await getJson(`https://api.lolhuman.xyz/api/spotify?apikey=${apifreeee}&url=${encodeURIComponent(q)}`)
