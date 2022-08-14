@@ -610,6 +610,31 @@ break
 
 
 
+case "ezan" : case 'EZAN':{
+
+	var result = await getJson('  https://api.aladhan.com/v1/timingsByCity?city=diyarbakir&country=Turkey  ')
+
+
+
+	let reactionMessage4 = {
+		react: {
+			text: "🕑",
+			key: mek.key
+		}
+	}
+
+	
+	 conn.sendMessage(from, reactionMessage4)
+
+	 conn.sendMessage(from, {text: '*Diyarbakır Ezan Vakti*' + '\n\n' + 'Sabah:  '+result.data.timings.Fajr + '\n\n' + 'Öğle:  '+result.data.timings.Dhuhr + '\n\n' + 'İkindi:  '+result.data.timings.Asr + '\n\n' + 'Akşam:  '+result.data.timings.Maghrib + '\n\n' + 'Yatsı:  '+result.data.timings.Isha})
+
+  
+
+
+}
+break
+
+
 case "konum": {
 	let sentMsg  = await conn.sendMessage(
 		from, 
