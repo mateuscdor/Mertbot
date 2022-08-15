@@ -415,7 +415,7 @@ case 'hayrrrrrrrrrrr' :{
 }
 break
 
-case 'merhaba': case 'selam': case 'sa': case 'kral': case 'başkan': case 'reis': {
+case 'merhaba': case 'selam': case 'mrb': case 'kral': case 'başkan': case 'reis': {
 
 	setTimeout(function() {
 		reply('Bir süredir sizden yanıt alamadığım için görüşmemizi sonlandırıyorum. Dilediğiniz zaman bize bu numaradan tekrar ulaşabilirsiniz.')
