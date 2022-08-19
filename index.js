@@ -510,7 +510,7 @@ break
 
 case "ig" : case 'İg': {
 
-		var result = await getJson(`https://api.lolhuman.xyz/api/instagram?apikey=${apifreeee}&url=${encodeURIComponent(q)}`)
+		var result = await getJson(`https://api.lolhuman.xyz/api/instagramreel?apikey=${apifreeee}&url=${encodeURIComponent(q)}`)
 
 		let reactionMessage4 = {
 			react: {
@@ -524,7 +524,7 @@ case "ig" : case 'İg': {
 
 	setTimeout(function() {
 
-		conn.sendMessage(from, {video: {url: result.result}, caption: '👤Instagram'}, {quoted: mek})
+		conn.sendMessage(from, {video: {url: result.result.link}, caption: '👤' + result.result.owner }, {quoted: mek})
 		
 	   }, 2000);
 
