@@ -534,7 +534,7 @@ case "benzin" : {
 
 	var result = await getJson(' https://kolektifapi-keyiflerolsun.cloud.okteto.net/akaryakit  ')
 
-	conn.sendMessage(from, {text: 'Kurşunsuz' + result.veri[0].fiyati + '\n\n' + 'Gazyağı' + result.veri[1].fiyati + '\n\n' + 'Motorin' + result.veri[2].fiyati + '\n\n' + 'Motorin(Excellium)' + result.veri[3].fiyati + '\n\n'})
+	conn.sendMessage(from, {text: 'Kurşunsuz  ' + result.veri[0].fiyati + '\n\n' + 'Gazyağı  ' + result.veri[1].fiyati + '\n\n' + 'Motorin  ' + result.veri[2].fiyati + '\n\n' + 'Motorin(Excellium)  ' + result.veri[3].fiyati + '\n\n'})
 
 }
 break
