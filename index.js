@@ -370,7 +370,7 @@ case "ucuzbilet" :{
 
 
 
-var result = await getJson('https://raw.githubusercontent.com/codermert/image-name-changer/main/sample.json')
+var result = await getJson('https://kolektifapi-keyiflerolsun.cloud.okteto.net/ucak')
 
 var result2 = result.veri[Math.floor(Math.random() * result.veri.length)]
 
