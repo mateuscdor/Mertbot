@@ -248,111 +248,6 @@ module.exports = async(conn, mek, store) => {
 				  await conn.sendMessage(from, buttonMessage)
 			}
 
-
-			if (list.includes(`i`)){
-				let reactionMessage = {
-					react: {
-						text: "🔍",
-						key: mek.key
-					}
-				}
-			
-
-				let templateButtons = [
-					{index: 1, urlButton: {displayText: 'Komudu kopyala', url: 'https://www.whatsapp.com/otp/copy/ig'}},	
-					
-				]
-				
-				let templateMessage = {
-					text: "Instagramdan video indirmek için bu komudu kullanın:\n\nÖRNEK:\nig url",
-					footer: 'UPO MARKT | 0414 606 04 45',
-					templateButtons: templateButtons
-				}
-				await conn.sendMessage(from, reactionMessage)
-				await conn.sendMessage(from, templateMessage)
-				
-				
-				
-		}
-
-
-		if (list.includes(`j`)){
-			let reactionMessage = {
-				react: {
-					text: "🔍",
-					key: mek.key
-				}
-			}
-		
-
-			let templateButtons = [
-				{index: 1, urlButton: {displayText: 'Komudu kopyala', url: 'https://www.whatsapp.com/otp/copy/film'}},	
-				
-			]
-			
-			let templateMessage = {
-				text: "Aramak için:\n\nÖRNEK:\n===>film filmadı",
-				footer: 'UPO MARKT | 0414 606 04 45',
-				templateButtons: templateButtons
-			}
-			await conn.sendMessage(from, reactionMessage)
-			await conn.sendMessage(from, templateMessage)
-			
-			
-	}
-
-
-	if (list.includes(`k`)){
-		let reactionMessage = {
-			react: {
-				text: "🔍",
-				key: mek.key
-			}
-		}
-	
-
-		let templateButtons = [
-			{index: 1, urlButton: {displayText: 'Komudu kopyala', url: 'https://www.whatsapp.com/otp/copy/spotify'}},	
-			
-		]
-		
-		let templateMessage = {
-			text: "Spotifydan müzik indirmek için:\n\nÖRNEK:\n===>spotify url",
-			footer: 'UPO MARKT | 0414 606 04 45',
-			templateButtons: templateButtons
-		}
-		await conn.sendMessage(from, reactionMessage)
-		await conn.sendMessage(from, templateMessage)
-		
-		
-}
-
-if (list.includes(`l`)){
-	let reactionMessage = {
-		react: {
-			text: "🔍",
-			key: mek.key
-		}
-	}
-
-
-	let templateButtons = [
-		{index: 1, urlButton: {displayText: 'Komudu kopyala', url: 'https://www.whatsapp.com/otp/copy/fb'}},	
-		
-	]
-	
-	let templateMessage = {
-		text: "Facebook'dan video indirmek için:\n\nÖRNEK:\n===>fb url",
-		footer: 'UPO MARKT | 0414 606 04 45',
-		templateButtons: templateButtons
-	}
-	await conn.sendMessage(from, reactionMessage)
-	await conn.sendMessage(from, templateMessage)
-	
-	
-}
-
-
 if (list.includes(`m`)){
 
 	var result = await getJson('https://raw.githubusercontent.com/codermert/image-name-changer/main/sample.json')
@@ -635,6 +530,18 @@ case "ezan" : case 'EZAN':{
 break
 
 
+case "benzin" : {
+
+	var result = await getJson(' https://kolektifapi-keyiflerolsun.cloud.okteto.net/akaryakit  ')
+
+	conn.sendMessage(from, {text: 'Kurşunsuz' + result.veri[0].fiyati + '\n\n' + 'Gazyağı' + result.veri[1].fiyati + '\n\n' + 'Motorin' + result.veri[2].fiyati + '\n\n' + 'Motorin(Excellium)' + result.veri[3].fiyati + '\n\n'})
+
+}
+break
+
+
+
+
 case "konum": {
 	let sentMsg  = await conn.sendMessage(
 		from, 
@@ -866,16 +773,12 @@ let sections = [
     {
 	rows: [
 		{title: "Ucuz Uçak Biletleri", rowId: `${prefix}m`, description: "Son eklenen veriler"},
-		{title: "Film Ara", rowId: `${prefix}j`, description: ""},
 	    {title: "Android Mobil Uygulama", rowId: `${prefix}a`, description: ""},
 	    {title: "Sosyal Medya Tasarım", rowId: `${prefix}b`, description: ""},
 	    {title: "Instagram Account", rowId: `${prefix}c`, description: ""},
 	    {title: "Sosyal Medya Hizmeti", rowId: `${prefix}d`, description: ""},
 	    {title: "Hizmetlerimiz", rowId: `${prefix}f`, description: ""},
 		{title: "A101 KATALOG", rowId: `${prefix}g`, description: ""},
-		{title: "Instagram Downloader", rowId: `${prefix}i`, description: ""},
-		{title: "Spotify Downloader", rowId: `${prefix}k`, description: ""},
-		{title: "Facebook Downloader", rowId: `${prefix}l`, description: ""},
 		{title: "Yurtiçi Kargo Takip", rowId: `${prefix}h`, description: ""},
 		
 	]
@@ -883,10 +786,10 @@ let sections = [
    
 ]
 let listMessage = {
-  text: "💸 Online ödeme\n🚛 1-14 iş gününde teslimat\n📦 Temiz kodlama",
+  text: "Sizlere daha iyi hizmet sunabilmek adına çalışmalarımızı sürdürüyoruz. Şimdilik aşağıdaki konularla ilgili destek olabiliyoruz.",
   footer: "",
   title: "ᴜᴘᴏ ᴍᴀʀᴋᴛ | ʏᴀᴢɪʟɪᴍ",
-  buttonText: "🛒 Lütfen seçiniz",
+  buttonText: "Lütfen seçiniz",
   sections
 }
 
